@@ -2,7 +2,7 @@
 
 I'm using Vue JS for the front-end and Django for the backend. The two are tied nicely together with django webpack loader, which will tell Django to server webpack bundles rather than templates. 
 
-I've used vue-django-webpack as a starting point, instructions below:
+I've used vue-django-webpack (by djstein [https://github.com/djstein/vue-django-webpack]) as a starting point, instructions below:
 
 
 # vue-django-webpack
