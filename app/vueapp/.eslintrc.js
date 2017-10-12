@@ -17,7 +17,6 @@ module.exports = {
     'import'
   ],
   globals: {
-    'cordova': true,
     'DEV': true,
     'PROD': true,
     '__THEME': true
@@ -35,6 +34,9 @@ module.exports = {
     'import/export': 2,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    'brace-style': [2, 'stroustrup', { 'allowSingleLine': true }]
+    "brace-style": [2, '1tbs', { 'allowSingleLine': true }],
+    "no-irregular-whitespace": 0,
+    "no-multiple-empty-lines": 0,
+    "space-before-function-paren": 0
   }
 }
