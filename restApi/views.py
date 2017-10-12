@@ -7,6 +7,8 @@ from rest_framework import status, generics
 from .models import User
 from .serializers import UserSerializer
 
+# NOTE: position in tutorial: (4) http://www.django-rest-framework.org/tutorial/4-authentication-and-permissions/
+
 # Lists all users or creates a new one
 # uses DRF ListCreateAPIView base class for get and create functionality right out of the box
 class UserList(generics.ListCreateAPIView):
