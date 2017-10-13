@@ -1,21 +1,14 @@
 <template>
   <div id="app">
-    <img src="./assets/vue-logo.png">
-    <h1>+</h1>
-    <img id="django" src="./assets/django-logo.png">
-    <hello></hello>
+    <img src="./assets/logo.png">
+    <router-view/>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
-
 export default {
   name: 'app',
-  components: {
-    Hello
-  }
-}
+};
 </script>
 
 <style>
@@ -26,9 +19,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-#django {
-  max-width:30%;
-  height:auto;
 }
 </style>

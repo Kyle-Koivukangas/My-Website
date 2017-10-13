@@ -2,83 +2,52 @@
 
 I'm using Vue JS for the front-end and Django for the backend. The two are tied nicely together with django webpack loader, which will tell Django to server webpack bundles rather than templates. 
 
-I've used vue-django-webpack (by djstein [https://github.com/djstein/vue-django-webpack]) as a starting point, instructions below:
 
+##Project creation instructions 
+(for my own records)
 
-# vue-django-webpack
-
-<h1 align="center">
-  Vue.js and Django Web Application
-</h1>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/djstein/vue-django-webpack/master/app/vueapp/src/assets/vue-logo.png" width="75" />
-  <img src="https://raw.githubusercontent.com/djstein/vue-django-webpack/master/app/vueapp/src/assets/django-logo.png" width="200" />
-</p>
-
-- Use of Vue.js in component form
-- Webpack building the JavaScript and CSS portions of the application
-- Django serving builds with django-webpack-loader
-
-The advantage to this over a pure Vue.js application are those niceties included in Django's core library such as database managment and URL routing. This also includes the ability to add third party applications such as, the Django REST Framework, quickly and painfree.
-
-Once a bundle has been created with Webpack, it can easily be served with Django's django.contrib.staticfiles app.
-
-##Installation
-Setup a new Python 3 virtualenv and install the pip and npm requirements.
+Create django project, set up virtual environment and install pip and npm requirements
 ```bash
-git clone https://github.com/djstein/vue-django-webpack.git
-cd vue-django-webpack
+#Create django project 
+django-admin startproject myWebsite
 
-# Virtual environment
-virtualenv -p python3 venv
-source venv/bin/activate
+cd myWebsite
 
-pip install -r requirements.txt
+#Create django app that will house the Vue JS front-end
+python manage.py startapp app
+
+cd app
+
+#Create Vue JS app and install npm requirements
+vue-cli init webpack vueapp
+cd vueapp
 npm install
+
+#Additional npm installs to integrate Vue JS with Django
+npm install --save-dev webpack webpack-bundle-tracker babel babel-loader
+
+#TO BE CONTINUED.. Still working out how to get this working correctly...
+
 ```
 
-## Development
-During development it is useful to access the hot-load features without the need to rebuild the application.
-Do so by running Django in one terminal and the node server in another.
+###Virtual Environment setup
+Setup a new Python 3 virtual environment and install the pip requirements.
 ```bash
-# Run Django webserver
-python manage.py runserver
 
-# Run node webserver
-npm run dev
-```
-Any changes made to `app/vueapp/src/` will now be seen automatically in development. Feel free to add components / new pages / etc.
+#In the Django project's root directory (myWebsite in this case)
+python -m venv .env
+.\.env\Scripts\activate # ('source env/bin/activate' on mac)
+pip install django django-webpack-loader
 
-## Webpack Build
-### Local
-To use the application without the use of the node server, use webpack to create a build. This will automatically switch the path needed in webpack-stats.json to reprsent the local build development bundles (.js and .css), with no changes to Django for local development.
-```bash
-# Local Build
-npm run build
-```
-Django can continue to run while the build is recreated, however it is advised to stop the webserver and clear the browswer cache when creating new builds.
-```bash
-# Run Django webserver
-python manage.py runserver
 ```
 
-### Production
-**Production Instructions Are Not Complete**
 
-For production builds, using build-proudction will pack and UglifyJS the application. IT IS RECOMMENDED TO STILL COMPLETE THE  [DJANGO](https://docs.djangoproject.com/en/dev/howto/deployment/checklist/) AND [VUE.JS](https://vuejs.org/v2/guide/deployment.html) PRODUCTION DOCUMENTATION BEFORE DEPLOYING.
-```bash
-# Production Build
-npm run build-production
-```
 
 ## Sources 
 
-These resources were heavily referenced:
+https://github.com/djstein/vue-django-webpack
 
 https://github.com/vuejs-templates/webpack/tree/master/template
 
 https://github.com/owais/django-webpack-loader/tree/master/examples
 
-## Contributions
-Please feel free to pull, fork, or add suggestions

@@ -1,4 +1,0 @@
-Django
-django-webpack-loader
-gunicorn
-Whitenoise
