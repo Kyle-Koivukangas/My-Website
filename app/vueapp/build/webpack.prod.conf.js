@@ -12,6 +12,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+var BundleTracker = require('webpack-bundle-tracker')
 
 const env = config.build.env
 
@@ -97,7 +98,10 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    new BundleTracker({
+      filename: './webpack-stats.json'
+    })
   ]
 })
 
