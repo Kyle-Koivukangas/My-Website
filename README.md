@@ -3,7 +3,7 @@
 I'm using Vue JS for the front-end and Django for the backend. The two are tied nicely together with django webpack loader, which will tell Django to server webpack bundles rather than templates. 
 
 
-##Project creation instructions 
+## Project creation instructions 
 (for my own records)
 
 Create django project, set up virtual environment and install pip and npm requirements
@@ -30,7 +30,7 @@ npm install --save-dev webpack webpack-bundle-tracker babel babel-loader
 
 ```
 
-###Virtual Environment setup
+### Virtual Environment setup
 Setup a new Python 3 virtual environment and install the pip requirements.
 ```bash
 
