@@ -1,5 +1,6 @@
 secret_info.py
 webpack_stats.json
+static/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -15,10 +15,13 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-VUE_DIR = os.path.join(BASE_DIR, '/app/vueapp')
+VUE_DIR = os.path.join(BASE_DIR, 'app\\vueapp\\')
 
+# set static directory for a place for collectstatic command to put the static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
-    os.path.join(VUE_DIR, 'static'), # We do this so that django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
+    # We do this so that django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
+    os.path.join(VUE_DIR, 'dist'),
 )
 
 WEBPACK_LOADER = {
@@ -70,7 +73,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
-        'APP_DIRS': True,
+        'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -79,6 +82,14 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+        'DIRS': (
+            os.path.join(BASE_DIR, 'static'),
+        ),
+        # 'loaders': (
+        #     'django.template.loaders.filesystem.Loader',
+        #     'django.template.loaders.app_directories.Loader',
+        #     #     'django.template.loaders.eggs.Loader',
+        # ),
     },
 ]
 
