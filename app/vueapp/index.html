@@ -1,0 +1,15 @@
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=UTF-8>
+    <title>Example Vueapp</title>
+</head>
+
+<body>
+    <div id=app></div>{% render_bundle 'app' %}
+    <!-- build files will be auto injected via webpack -->
+</body>
+
+</html>
