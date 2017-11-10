@@ -23,11 +23,9 @@ pip install django django-webpack-loader
 cd app/vueapp
 npm install
 
+
 #Run dev build of vue front-end app (make sure you're in the 'vueapp' folder)
 npm run dev
-
-#django migrations commands
-
 
 #Run django back-end in another window (you can run both simoultaneously during development)
 cd My-website-V2.0 #(just make sure you're in main django project folder)
