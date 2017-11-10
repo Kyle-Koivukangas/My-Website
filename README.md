@@ -4,7 +4,7 @@ I'm using Vue JS for the front-end and Django for the backend. The two are tied 
 
 ## Project Clone instructions
 
-Commands to clone project
+Commands to clone project, set up environment and get it running:
 ```bash
 #Git clone project
 git clone https://github.com/Kyle-Koivukangas/My-Website-V2.0.git
