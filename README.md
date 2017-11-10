@@ -1,6 +1,45 @@
 # This is my personal website
 
-I'm using Vue JS for the front-end and Django for the backend. The two are tied nicely together with django webpack loader, which will tell Django to server webpack bundles rather than templates. 
+I'm using Vue JS for the front-end and Django for the backend. The two are tied nicely together with django webpack loader, which will tell Django to serve webpack bundles rather than Django templates. 
+
+## Project Clone instructions
+
+Commands to clone project
+```bash
+#Git clone project
+git clone https://github.com/Kyle-Koivukangas/My-Website-V2.0.git
+
+#Set up Python virtual environment (in main project folder)
+cd My-website-V2.0
+python -m venv .env
+
+#Activate virtual environment
+.\.env\Scripts\activate # ('source env/bin/activate' on mac, 'deactivate' will deactivate the virtual env.)
+
+#Install Django to the virtual environment
+pip install django django-webpack-loader
+
+#Install webpack dependencies
+cd app/vueapp
+npm install
+
+#Run dev build of vue front-end app (make sure you're in the 'vueapp' folder)
+npm run dev
+
+#django migrations commands
+
+
+#Run django back-end in another window (you can run both simoultaneously during development)
+cd My-website-V2.0 #(just make sure you're in main django project folder)
+
+#(do your model migrations if needed)
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py runserver
+
+```
+
 
 
 ## Project creation instructions 
