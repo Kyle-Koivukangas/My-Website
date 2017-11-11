@@ -1,6 +1,31 @@
 <template>
     <div>
-        <vue-nav></vue-nav>
+        <h1>Home</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minus eum odio quas dolorum nemo sapiente necessitatibus praesentium, optio quam quae aut dolores velit! Voluptates esse perspiciatis officiis quidem delectus!</p>
     </div>
 </template>
 
@@ -10,9 +35,7 @@ export default {
     data() {
         return {};
     },
-    components: {
-        vueNav: () => import("./Nav.vue")
-    }
+
 };
 </script>
 

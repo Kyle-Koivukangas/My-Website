@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
+    <vue-nav></vue-nav>
     <router-view/>
   </div>
 </template>
@@ -8,6 +9,9 @@
 <script>
 export default {
     name: 'app',
+    components: {
+        vueNav: () => import("./components/Nav.vue")
+    }
 };
 </script>
 
@@ -18,6 +22,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
 }
 </style>
