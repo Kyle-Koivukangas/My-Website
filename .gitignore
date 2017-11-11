@@ -1,3 +1,4 @@
+.vscode
 secret_info.py
 webpack_stats.json
 static/
