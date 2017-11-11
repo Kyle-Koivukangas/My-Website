@@ -5,12 +5,9 @@
 </template> 
 
 <script>
-import 'vue-awesome/icons/bars'
+import "vue-awesome/icons/bars";
 
-export default {
-    
-
-}
+export default {};
 </script>
 
 <style>

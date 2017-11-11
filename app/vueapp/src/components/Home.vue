@@ -8,14 +8,12 @@
 export default {
     name: "Home",
     data() {
-        return {
-
-        }
+        return {};
     },
     components: {
-        vueNav: () => import('./Nav.vue'),
+        vueNav: () => import("./Nav.vue")
     }
-}
+};
 </script>
 
 <style>
