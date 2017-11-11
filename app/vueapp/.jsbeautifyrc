@@ -1,0 +1,6 @@
+{
+    "indent_size": 4,
+    "indent_char": " ",
+    "end_with_newline": true,
+    "brace_style": "collapse"
+}
