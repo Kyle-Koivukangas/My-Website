@@ -30,17 +30,17 @@
         </vue-sidebar>
 
         <transition name="fade">
-            <div v-if="showBtn" class="nav-btn fixed-top" @click="show = !show">
+            <div v-if="showBtn" class="nav-btn" @click="show = !show">
                 <icon name="bars" scale="3" label="Navigation" v-on:click="show = !show"></icon>
             </div>
         </transition>
 
-        <div>
+        <!-- debug info (REMOVE THIS BEFORE DEPLOYMENT) -->
+        <!-- <div>
             <button @click="show = !show">Toggle</button><button @click="show = false">Close</button>
             <p>{{ show }}</p>
         </div>
-
-        <p>show = {{ show }}</p>
+        <p>show = {{ show }}</p> -->
 
 
     </div>
@@ -75,6 +75,7 @@ export default {
 </script>
 
 <style lang="scss">
+// * {position: relative}
 ul {
   /* list-style-type: none; */
   list-style: none;
@@ -86,8 +87,11 @@ ul {
   top: 0;
 }
 .navigation {
+  position: fixed;
   display: inline;
   left: 0;
+  top: 0;
+  z-index: 10;
 }
 .nav-btn {
   left: 0;

@@ -3,23 +3,23 @@
 
 @font-face {
     font-family: 'Josefin Slab';
-    src: url("/assets/fonts/Josefin_Slab/JosefinSlab-Regular.ttf") format("truetype");
+    src: url("/assets/fonts2/Josefin_Slab/JosefinSlab-Regular.ttf") format("truetype");
  }
  @font-face {
     font-family: 'Vollkorn';
-    src: url("/assets/fonts/Vollkorn/Vollkorn-Regular.ttf") format("truetype");
+    src: url("/assets/fonts2/Vollkorn/Vollkorn-Regular.ttf") format("truetype");
  }
  @font-face {
     font-family: 'Ubuntu';
-    src: url("/assets/fonts/Ubuntu/Ubuntu-Regular.ttf") format("truetype");
+    src: url("/assets/fonts2/Ubuntu/Ubuntu-Regular.ttf") format("truetype");
  }
  @font-face {
     font-family: 'Ubuntu Condensed';
-    src: url("/assets/fonts/Ubuntu_Condensed/UbuntuCondensed-Regular.ttf") format("truetype");
+    src: url("/assets/fonts2/Ubuntu_Condensed/UbuntuCondensed-Regular.ttf") format("truetype");
  }
  @font-face {
     font-family: 'Lato';
-    src: url("/assets/fonts/Lato/Lato-Regular.ttf") format("truetype");
+    src: url("/assets/fonts2/Lato/Lato-Regular.ttf") format("truetype");
  }
 
 
@@ -34,10 +34,10 @@ $white: #F9F9F9;
 $lightgrey: #c4c4c4;
 $grey: #9b9b9b;
 $highlight: #4497E3;
-$color1: #4F789D;
+$blue1: #4F789D;
 // palette 2
 $offwhite: #F5F1ED;
 $darkgrey: #3C3C3B;
 $black: #252323;
-$hightlight2: #2DE1FC;
-$color2: #70798C;
+$highlight2: #2DE1FC;
+$blue22: #70798C;
