@@ -1,0 +1,43 @@
+
+// @import url('https://fonts.googleapis.com/css?family=Josefin+Slab|Ubuntu|Ubuntu+Condensed|Vollkorn');
+
+@font-face {
+    font-family: 'Josefin Slab';
+    src: url("/assets/fonts/Josefin_Slab/JosefinSlab-Regular.ttf") format("truetype");
+ }
+ @font-face {
+    font-family: 'Vollkorn';
+    src: url("/assets/fonts/Vollkorn/Vollkorn-Regular.ttf") format("truetype");
+ }
+ @font-face {
+    font-family: 'Ubuntu';
+    src: url("/assets/fonts/Ubuntu/Ubuntu-Regular.ttf") format("truetype");
+ }
+ @font-face {
+    font-family: 'Ubuntu Condensed';
+    src: url("/assets/fonts/Ubuntu_Condensed/UbuntuCondensed-Regular.ttf") format("truetype");
+ }
+ @font-face {
+    font-family: 'Lato';
+    src: url("/assets/fonts/Lato/Lato-Regular.ttf") format("truetype");
+ }
+
+
+$josefin: 'Josefin Slab', serif;
+$vollkorn: 'Vollkorn', serif;
+$ubuntu: 'Ubuntu', sans-serif;
+$ubuntucond: 'Ubuntu Condensed', sans-serif;
+$lato: 'Lato', sans-serif;
+
+// palette 1
+$white: #F9F9F9;
+$lightgrey: #c4c4c4;
+$grey: #9b9b9b;
+$highlight: #4497E3;
+$color1: #4F789D;
+// palette 2
+$offwhite: #F5F1ED;
+$darkgrey: #3C3C3B;
+$black: #252323;
+$hightlight2: #2DE1FC;
+$color2: #70798C;

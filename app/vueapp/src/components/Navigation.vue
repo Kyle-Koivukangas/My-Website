@@ -1,23 +1,23 @@
 <template>
     <div class="navigation">
 
-        <vue-sidebar v-model="show" :width="300" :duration=".5" effect="ease-in-out" @sidebarWasClosed="show = $event">
-                <h1>SIDEBAR</h1>
+        <vue-sidebar class="sidebar" v-model="show" :width="sidebarWidth" :duration=".5" effect="ease-in-out" @sidebarWasClosed="show = $event">
                 <!-- <div class="portrait-wrapper"> -->
-                    <img class="portrait" src="../assets/Kyle.jpg" alt="">
+                    <img :style="{marginTop: sidebarWidth/4 + 'px'}" class="portrait" src="../assets/Kyle.jpg" alt="">
                 <!-- </div> -->
                 <h3>Kyle Koivukangas</h3>
 
-
-                <ul>
-                    <li>About</li>
-                    <li>Projects</li>
-                    <li>Blog</li>
-                    <li>Hire Me</li>
-                </ul>
+                <div class="nav-links">
+                    <ul>
+                        <li>About</li>
+                        <li>Projects</li>
+                        <li>Blog</li>
+                        <li>Hire Me</li>
+                    </ul>
+                </div>
 
                 <div class="secondary-info">
-                    <ul >
+                    <ul>
                         <li>Email</li>
                         <li>Github</li>
                         <li>StackOverflow</li>
@@ -53,7 +53,8 @@ export default {
     data() {
         return {
             show: false,
-            showBtn: true
+            showBtn: true,
+            sidebarWidth: 300,
         }
     },
     components: {
@@ -73,7 +74,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 ul {
   /* list-style-type: none; */
   list-style: none;
@@ -93,10 +94,13 @@ ul {
   width: 50px;
 }
 .sidebar {
-  background-color: #555;
+  background-color: $white;
   left: 0;
-  width: 300px;
-  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+.sidebar h3 {
+    font-family: $ubuntu;
 }
 .portrait-wrapper {
   width: 100%;
@@ -105,12 +109,24 @@ ul {
 .portrait {
   border-radius: 50%;
   max-width: 50%;
-  max-height: 50%;
+  max-height: 50%;  
+}
+.nav-links {
+  font-family: $lato;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+  line-height: 2.6em;
+  font-size: 1.1em;
+  font-weight: 100;
 }
 .secondary-info {
   position: fixed;
   bottom: 0;
   width: 100%;
   text-align: right;
+  font-family: $ubuntucond;
+  font-weight: 600;
+  color: $lightgrey;
 }
 </style>
