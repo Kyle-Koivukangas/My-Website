@@ -43,11 +43,9 @@ export default {
         'value'(val) {
             setTimeout(() => this.toggle(val))
         },
-
         'duration'() {
             this.setupBody({})
         },
-
         'effect'() {
             this.setupBody({})
         }
@@ -114,7 +112,6 @@ export default {
 
         if (this.closeOnExternalClick)
             setTimeout(() => document.addEventListener('click', this.clickOutside))
-
 
         if (this.closeOnEsc)
             setTimeout(() => document.addEventListener('keydown', this.esc))

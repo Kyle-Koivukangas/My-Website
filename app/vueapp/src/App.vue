@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
-    <vue-nav></vue-nav>
+    <!-- <vue-nav></vue-nav> -->
+    <vue-navigation></vue-navigation>
     <router-view/>
   </div>
 </template>
@@ -10,7 +11,8 @@
 export default {
     name: 'app',
     components: {
-        vueNav: () => import("./components/Nav.vue")
+        vueNav: () => import("./components/Nav.vue"),
+        vueNavigation: () => import("./components/Navigation.vue"),
     }
 };
 </script>
