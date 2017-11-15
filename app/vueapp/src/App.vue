@@ -43,19 +43,19 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: black;
   margin-top: 0px;
 }
 .pushRight {
-  transition: all ease 1s, width ease 1s;
-  -webkit-transition: all ease 1s, width ease 1;
+  transition: all ease .5s, width ease .5s;
+  -webkit-transition: all ease .5s, width ease .5s;
   transform: translateX(300px);
   //   display: block;
   width: calc(100% - 300px);
 }
 .pushLeft {
-  transition: all ease 1s, width ease 1s;
-  -webkit-transition: all ease 1s, width ease 1;
+  transition: all ease .5s, width ease .5s;
+  -webkit-transition: all ease .5s, width ease .5s;
   transform: translateX(0px);
   width: 100%;
 }

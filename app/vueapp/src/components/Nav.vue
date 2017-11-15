@@ -1,7 +1,6 @@
 <template>
     <div class="navigation">
-
-        <transition name="slideLeft">
+        <transition enter-active-class="slideInLeft" leave-active-class="slideOutLeft">
             <div class="sidebar fixed-top" v-if="show">
                 <!-- <div class="portrait-wrapper"> -->
                 <img class="portrait" src="../assets/Kyle.jpg" alt="">
@@ -32,8 +31,14 @@
         </transition>
 
         <transition name="fade">
-            <div v-if="showBtn" class="nav-btn fixed-top" @click="show = !show">
-                <icon name="bars" scale="3" label="Navigation" v-on:click="show = !show"></icon>
+            <div v-if="showBtn" class="nav-btn fixed-top" :class="{pushRight: show, pushLeft: !show}" @click="show = !show">
+                <icon id="ico" name="bars" scale="3" label="Navigation" v-on:click="show = !show"></icon>
+            </div>
+        </transition>
+
+        <transition enter-active-class="slideInLeft" leave-active-class="hide">
+            <div v-if="!showBtn" class="nav-btn fixed-top test" :class="{pushRight: show, pushLeft: !show}" @click="show = !show">
+                <icon class="times" scale="3" label="Close"></icon>
             </div>
         </transition>
 
@@ -41,12 +46,14 @@
         <!-- <button @click="show = !show">test</button>
         <p>show = {{ show }}</p> -->
 
+        
 
     </div>
 </template> 
 
 <script>
 import "vue-awesome/icons/bars";
+import "vue-awesome/icons/times";
 
 export default {
     data() {
@@ -65,7 +72,7 @@ export default {
                 this.$emit('show', false)
                 setTimeout(() => {
                     this.showBtn = true;
-                }, 650);
+                }, 250);
             }
         },
     },
@@ -98,15 +105,18 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Josefin+Slab|Ubuntu|Ubuntu+Condensed|Vollkorn|Lato');
-$josefin: 'Josefin Slab', serif;
-$vollkorn: 'Vollkorn', serif;
-$ubuntu: 'Ubuntu', sans-serif;
-$ubuntucond: 'Ubuntu Condensed', sans-serif;
-$lato: 'Lato', sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Josefin+Slab|Ubuntu|Ubuntu+Condensed|Vollkorn|Lato");
+$josefin: "Josefin Slab", serif;
+$vollkorn: "Vollkorn", serif;
+$ubuntu: "Ubuntu", sans-serif;
+$ubuntucond: "Ubuntu Condensed", sans-serif;
+$lato: "Lato", sans-serif;
 
 $sidebarWidth: 300px;
-
+.test {
+  color: black;
+  z-index: 20;
+}
 .fixed-top {
   position: fixed;
   top: 0;
@@ -116,9 +126,15 @@ $sidebarWidth: 300px;
   left: 0;
 }
 .nav-btn {
-  left: 0;
   width: 50px;
   z-index: 10;
+  margin: 10px;
+  & #ico {
+    //stroke doesn't seem to work on font awesome icons..
+    -webkit-text-stroke: 1px white;
+    color: $black;
+    text-shadow: 0px 0px 3px #fff;
+  }
 }
 .sidebar {
   background-color: $white;
@@ -126,6 +142,7 @@ $sidebarWidth: 300px;
   width: $sidebarWidth;
   height: 100%;
   z-index: 11;
+  border-right: $lightgrey solid 2px;
   & ul {
     list-style: none;
     padding: 0;
@@ -137,9 +154,9 @@ $sidebarWidth: 300px;
   max-height: 50%;
   margin-top: $sidebarWidth/4;
 }
-.nav-title{
-    font-family: $lato;
-    font-size: 1.3em;
+.nav-title {
+  font-family: $lato;
+  font-size: 1.3em;
 }
 .nav-links {
   font-family: $ubuntu;
@@ -159,5 +176,59 @@ $sidebarWidth: 300px;
   font-family: $ubuntucond;
   font-weight: 600;
   color: $lightgrey;
+  & ul {
+    margin: 10px;
+  }
+}
+.hide {
+  display: none;
+}
+
+// Animations:
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+
+.pushRight {
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transform: translateX(300px);
+  display: block;
+}
+.pushLeft {
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  transform: translateX(0px);
 }
 </style>
