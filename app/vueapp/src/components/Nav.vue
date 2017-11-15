@@ -6,7 +6,7 @@
                 <!-- <div class="portrait-wrapper"> -->
                 <img class="portrait" src="../assets/Kyle.jpg" alt="">
                 <!-- </div> -->
-                <h3>Kyle Koivukangas</h3>
+                <h3 class="nav-title">Kyle Koivukangas</h3>
 
                 <div class="nav-links">
                     <ul>
@@ -98,6 +98,13 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab|Ubuntu|Ubuntu+Condensed|Vollkorn|Lato');
+$josefin: 'Josefin Slab', serif;
+$vollkorn: 'Vollkorn', serif;
+$ubuntu: 'Ubuntu', sans-serif;
+$ubuntucond: 'Ubuntu Condensed', sans-serif;
+$lato: 'Lato', sans-serif;
+
 $sidebarWidth: 300px;
 
 .fixed-top {
@@ -130,8 +137,12 @@ $sidebarWidth: 300px;
   max-height: 50%;
   margin-top: $sidebarWidth/4;
 }
+.nav-title{
+    font-family: $lato;
+    font-size: 1.3em;
+}
 .nav-links {
-  font-family: $lato;
+  font-family: $ubuntu;
   width: 100%;
   height: 100%;
   margin-top: 50px;

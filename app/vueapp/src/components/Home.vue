@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main">
         <div class="banner">
             <div class="header-container">
                 <h1>Hi, I'm Kyle. I design & build<br>full-stack web applications.</h1>
@@ -51,6 +51,13 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab|Ubuntu|Ubuntu+Condensed|Vollkorn|Lato');
+$josefin: 'Josefin Slab', serif;
+$vollkorn: 'Vollkorn', serif;
+$ubuntu: 'Ubuntu', sans-serif;
+$ubuntucond: 'Ubuntu Condensed', sans-serif;
+$lato: 'Lato', sans-serif;
+
 .banner {
     background-color: $highlight;
     height: 300px;
@@ -63,8 +70,12 @@ export default {
     // background-color: white;
     text-align: center;
     width: 100%;
-    margin-right: 300px;
-    font-family: $lato;
-    color: $white;
+    & h1 {
+        font-family: $lato;
+        color: $white;
+    }
+}
+.main {
+    font-family: $ubuntu;
 }
 </style>
