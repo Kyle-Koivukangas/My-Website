@@ -6,7 +6,7 @@
     <!-- <img src="./assets/logo.png"> -->
     <vue-nav @show="showNav = $event"></vue-nav>
     <!-- <vue-navigation></vue-navigation> -->
-    <router-view class="content" :class="{pushRight: showNav, pushLeft: !showNav, widthLess: showNav}"/>
+    <router-view class="content" :class="{pushRight: showNav, pushLeft: !showNav}"/>
   </div>
 </template>
 
