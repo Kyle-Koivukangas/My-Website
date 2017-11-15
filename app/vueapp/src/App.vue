@@ -6,7 +6,7 @@
     <!-- <img src="./assets/logo.png"> -->
     <vue-nav @show="showNav = $event"></vue-nav>
     <!-- <vue-navigation></vue-navigation> -->
-    <router-view class="content" :class="{pushRight: showNav, pushLeft: !showNav}"/>
+    <router-view class="view" :class="{pushRight: showNav, pushLeft: !showNav}"/>
   </div>
 </template>
 
@@ -45,18 +45,24 @@ export default {
   text-align: center;
   color: black;
   margin-top: 0px;
-}
-.pushRight {
-  transition: all ease .5s, width ease .5s;
-  -webkit-transition: all ease .5s, width ease .5s;
-  transform: translateX(300px);
-  //   display: block;
-  width: calc(100% - 300px);
-}
-.pushLeft {
-  transition: all ease .5s, width ease .5s;
-  -webkit-transition: all ease .5s, width ease .5s;
-  transform: translateX(0px);
   width: 100%;
+}
+// .pushRight {
+//   transition: all ease 0.5s, width ease 0.5s, margin ease 0.5s;
+//   -webkit-transition: all ease 0.5s, width ease 0.5s, margin ease 0.5s;
+//   transform: translateX(300px);
+//   width: calc(100% - 300px);
+//   margin: 0 0 0 -150px;
+// }
+// .pushLeft {
+//   transition: all ease 0.5s, width ease 0.5s;
+//   -webkit-transition: all ease 0.5s, width ease 0.5s;
+//   transform: translateX(0px);
+//   width: 100%;
+//   margin-left: 50%;
+//   margin: 0 50% 0 0;
+// }
+.view {
+    margin: auto;
 }
 </style>

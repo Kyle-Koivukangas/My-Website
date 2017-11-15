@@ -219,16 +219,19 @@ $sidebarWidth: 300px;
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
 }
+// uncomment these for push, to push content out of the way of the sidebar
+// TODO:    - Make it so that push classes only activate when screen width is small enough that the content will be covered
+    //      - Also, make it slide from top and cover whole screen if on mobile device-sized screens.
 
-.pushRight {
-  transition: all ease 0.5s;
-  -webkit-transition: all ease 0.5s;
-  transform: translateX(300px);
-  display: block;
-}
-.pushLeft {
-  transition: all ease 0.5s;
-  -webkit-transition: all ease 0.5s;
-  transform: translateX(0px);
-}
+// .pushRight {
+//   transition: all ease 0.5s;
+//   -webkit-transition: all ease 0.5s;
+//   transform: translateX(300px);
+//   display: block;
+// }
+// .pushLeft {
+//   transition: all ease 0.5s;
+//   -webkit-transition: all ease 0.5s;
+//   transform: translateX(0px);
+// }
 </style>
