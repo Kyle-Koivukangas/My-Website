@@ -29,9 +29,9 @@
 
                 <div class="secondary-info">
                     <ul>
-                        <li>Email</li>
-                        <li>Github</li>
-                        <li>StackOverflow</li>
+                        <li><icon class="ico" name="envelope" scale="1" label="Email"></icon> Email</li>
+                        <li><icon class="ico" name="github" scale="1" label="github"></icon> Github</li>
+                        <li><icon class="ico" name="stack-overflow" scale="1" label="stack overflow"></icon> Stack Overflow</li>
                         <li>Quora</li>
                         <li>PGP</li>
                         <li>BTC</li>
@@ -190,7 +190,7 @@ $sidebarWidth: 300px;
     text-decoration: none;
   }
   & a.router-link-active {
-      transition: 0.5s;
+    transition: 0.5s;
     color: $highlight2;
     text-decoration: none;
   }
