@@ -15,7 +15,6 @@ export default {
     name: 'app',
     components: {
         vueNav: () => import("./components/Nav.vue"),
-        vueNavigation: () => import("./components/Navigation.vue"),
     },
     data() {
         return {
