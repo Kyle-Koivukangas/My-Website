@@ -12,7 +12,7 @@
                         <li>About</li>
                         <li>Projects</li>
                         <li>Blog</li>
-                        <li>Hire Me</li>
+                        <li class="highlight">Hire Me</li>
                     </ul>
                 </div>
 
@@ -116,6 +116,9 @@ $sidebarWidth: 300px;
 .test {
   color: black;
   z-index: 20;
+}
+.highlight {
+    color: $highlight2;
 }
 .fixed-top {
   position: fixed;

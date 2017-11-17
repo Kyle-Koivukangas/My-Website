@@ -47,22 +47,22 @@ export default {
   margin-top: 0px;
   width: 100%;
 }
-// .pushRight {
-//   transition: all ease 0.5s, width ease 0.5s, margin ease 0.5s;
-//   -webkit-transition: all ease 0.5s, width ease 0.5s, margin ease 0.5s;
-//   transform: translateX(300px);
-//   width: calc(100% - 300px);
-//   margin: 0 0 0 -150px;
-// }
-// .pushLeft {
-//   transition: all ease 0.5s, width ease 0.5s;
-//   -webkit-transition: all ease 0.5s, width ease 0.5s;
-//   transform: translateX(0px);
-//   width: 100%;
-//   margin-left: 50%;
-//   margin: 0 50% 0 0;
-// }
+.pushRight {
+  transition: all ease 0.5s, width ease 0.5s, margin ease 0.5s;
+  -webkit-transition: all ease 0.5s, width ease 0.5s, margin ease 0.5s;
+  transform: translateX(300px);
+  width: calc(100% - 300px);
+  //  half of the sidebar size (to keep main content centered when sidebar is open) 
+  left: 150px; // ***CHANGE THIS IF YOU CHANGE SIDEBAR WIDTH***
+}
+.pushLeft {
+  transition: all ease 0.5s, width ease 0.5s;
+  -webkit-transition: all ease 0.5s, width ease 0.5s;
+  transform: translateX(0px);
+  width: 100%;
+  left: 0px;
+}
 .view {
-    margin: auto;
+//   margin: auto;
 }
 </style>
