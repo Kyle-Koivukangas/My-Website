@@ -9,10 +9,18 @@
 
                 <div class="nav-links">
                     <ul>
-                        <router-link class="link" tag="li" to="/">Home</router-link>
-                        <router-link class="link" tag="li" to="/about">About</router-link>
-                        <router-link class="link" tag="li" to="/projects">Projects</router-link>
-                        <router-link class="link" tag="li" to="/blog">Blog</router-link>
+                        <li>
+                            <router-link class="link" to="/" exact>Home</router-link>
+                        </li>
+                        <li>
+                            <router-link class="link"  to="/about">About</router-link>
+                        </li>
+                        <li>
+                            <router-link class="link" to="/projects">Projects</router-link>
+                        </li>
+                        <li>
+                            <router-link class="link" to="/blog">Blog</router-link>
+                        </li>
                         <div class="special-btn">
                             <router-link tag="li" to="/hireme">Hire Me</router-link>    
                         </div>
@@ -174,16 +182,24 @@ $sidebarWidth: 300px;
   font-weight: 100;
   & .link {
     cursor: pointer;
+    color: $black;
   }
   & .link:hover {
+    transition: 0.3s;
     color: $highlight2;
+    text-decoration: none;
+  }
+  & a.router-link-active {
+    color: $highlight2;
+    text-decoration: none;
   }
 }
+
 .special-btn {
   background-color: $highlight2;
   width: 100px;
   margin: auto;
-  border-radius: 25px;
+  border-radius: 40px;
   color: $white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   font-size: 1.1em;
