@@ -142,11 +142,11 @@ $sidebarWidth: 300px;
 .nav-btn {
   width: 50px;
   z-index: 10;
-  margin: 10px;
+  margin: 30px 0 0 35px;
   & #ico {
     //stroke doesn't seem to work on font awesome icons..
     -webkit-text-stroke: 1px white;
-    color: $black;
+    color: $darkgrey;
     text-shadow: 0px 0px 3px #fff;
   }
 }
@@ -190,14 +190,14 @@ $sidebarWidth: 300px;
     text-decoration: none;
   }
   & a.router-link-active {
+      transition: 0.5s;
     color: $highlight2;
     text-decoration: none;
   }
 }
-
 .special-btn {
   background-color: $highlight2;
-  width: 100px;
+  width: 120px;
   margin: auto;
   border-radius: 40px;
   color: $white;

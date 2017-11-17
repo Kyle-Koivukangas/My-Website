@@ -6,7 +6,10 @@
     <!-- <img src="./assets/logo.png"> -->
     <vue-nav @show="showNav = $event"></vue-nav>
     <!-- <vue-navigation></vue-navigation> -->
-    <router-view class="view" :class="{pushRight: showNav, pushLeft: !showNav}"/>
+    <div class="view-wrapper" :class="{pushRight: showNav, pushLeft: !showNav}">
+        <router-view class="view" />
+        <vue-footer/>
+    </div>
   </div>
 </template>
 
@@ -15,6 +18,7 @@ export default {
     name: 'app',
     components: {
         vueNav: () => import("./components/Nav.vue"),
+        vueFooter: () => import("./components/Footer.vue"),
     },
     data() {
         return {
@@ -42,7 +46,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: black;
+  color: $darkgrey;
   margin-top: 0px;
   width: 100%;
 }
@@ -68,7 +72,7 @@ a:hover {
   width: 100%;
   left: 0px;
 }
-.view {
+.view-wrapper {
   //   margin: auto;
   font-size: 1.2rem;
   @media (max-width: 900px) {
