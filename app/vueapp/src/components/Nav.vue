@@ -142,7 +142,7 @@ $sidebarWidth: 300px;
 .nav-btn {
   width: 50px;
   z-index: 10;
-  margin: 30px 0 0 35px;
+  margin: 25px 0 0 25px;
   & #ico {
     //stroke doesn't seem to work on font awesome icons..
     -webkit-text-stroke: 1px white;

@@ -78,7 +78,7 @@ $contentSize: 900px;
   background-color: $highlight2;
   height: 300px;
   max-width: $contentSize;
-  margin: 50px auto;
+  margin: 30px auto;
   border-radius: 5px;
   display: flex;
   justify-content: left;
