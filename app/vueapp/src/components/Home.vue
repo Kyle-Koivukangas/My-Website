@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="main">
-            <div class="banner">
+            <div class="main-banner">
                 <div class="header-container">
                     <h1>Hi, I'm Kyle. I design 	&amp; build<br>full-stack web applications.</h1>
                 </div>
@@ -72,9 +72,8 @@ $ubuntu: "Ubuntu", sans-serif;
 $ubuntucond: "Ubuntu Condensed", sans-serif;
 $lato: "Lato", sans-serif;
 
-$contentSize: 900px;
 
-.banner {
+.main-banner {
   background-color: $highlight2;
   height: 300px;
   max-width: $contentSize;

@@ -55,7 +55,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .pushRight {
   transition: all ease 0.5s, width ease 0.5s, margin ease 0.5s;
@@ -76,7 +76,7 @@ a:hover {
   //   margin: auto;
   font-size: 1.2rem;
   @media (max-width: 900px) {
-      font-size: .9rem;
+    font-size: 0.9rem;
   }
 }
 </style>
