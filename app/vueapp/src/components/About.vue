@@ -7,7 +7,7 @@
         </div>
         <div class="content">
             <div class="section">
-                <p>I'm a self-taught web developer in Victoria, BC. I'm most experienced with Vue JS and Django, I mostly enjoy making small web apps with Python or Javascript; have a look at my <a href="">projects</a> page to see what I've made.</p>
+                <p>I'm a self-taught web developer in Victoria, BC. I'm most experienced with Vue JS and Django. <br><br> I enjoy making small web apps with Python or Javascript; have a look at my <router-link to="projects">projects</router-link> page to see what I've made.</p>
                 <br>
             </div>
             <div class="hr"></div>
