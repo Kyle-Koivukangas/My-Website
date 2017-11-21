@@ -7,7 +7,9 @@
     <vue-nav @show="showNav = $event"></vue-nav>
     <!-- <vue-navigation></vue-navigation> -->
     <div class="view-wrapper" :class="{pushRight: showNav, pushLeft: !showNav}">
-        <router-view class="view" />
+        <transition mode="out-in" name="fade">
+            <router-view class="view" />
+        </transition>
         <vue-footer/>
     </div>
   </div>
