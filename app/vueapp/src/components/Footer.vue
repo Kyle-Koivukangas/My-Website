@@ -4,11 +4,11 @@
 
       <div class="footlinks">
           <ul>
-              <li><icon class="ico" name="envelope" scale="1" label="Email"></icon> Email</li>
-              <li><icon class="ico" name="skype" scale="1" label="skype"></icon> Skype</li>
-              <li><icon class="ico" name="github" scale="1" label="github"></icon> Github</li>
-              <li><icon class="ico" name="linkedin-square" scale="1" label="linkedin"></icon> LinkedIn</li>
-              <li><icon class="ico" name="stack-overflow" scale="1" label="stack overflow"></icon> Stack Overflow</li>
+              <li><a href="mailto:kyle.koivukangas@gmail.com" ><icon class="ico" name="envelope" scale="1" label="Email"></icon> Email</a></li>
+              <li><a href="" ><icon class="ico" name="skype" scale="1" label="skype"></icon> Skype</a></li>
+              <li><a href="https://github.com/Kyle-Koivukangas" ><icon class="ico" name="github" scale="1" label="github"></icon> Github</a></li>
+              <li><a href="" ><icon class="ico" name="linkedin-square" scale="1" label="linkedin"></icon> LinkedIn</a></li>
+              <li><a href="" ><icon class="ico" name="stack-overflow" scale="1" label="stack overflow"></icon> Stack Overflow</a></li>
           </ul>
       </div>
       
@@ -56,10 +56,14 @@ $contentwidth: 900px;
     min-height: 30px;
     // border: 1px solid #000;
     margin: 5px;
+    & a {
+      color: $darkgrey;
+      text-decoration: none;
+    }
   }
 }
 .ico {
-    margin: auto;
-    display: inline-block
+  margin: auto;
+  display: inline-block;
 }
 </style>

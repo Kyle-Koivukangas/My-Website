@@ -39,7 +39,7 @@ export default {
                     id: 2,
                     name: "My personal website",
                     date: "01/10/2017",
-                    info: "My personal website; Django rest framework is used as the API for the Vue JS front end. I'm currently building the back end CMS with Django CMS. "
+                    info: "My personal website; Django rest framework acts as the API for the Vue JS front end. I'm currently building the back end CMS with Django CMS. "
                 }
             },
         }

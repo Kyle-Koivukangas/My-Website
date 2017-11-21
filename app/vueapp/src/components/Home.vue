@@ -11,7 +11,7 @@
                 <div>
                     <p>I'm an independent web developer based in Victoria, BC. I work primarily with Vue JS and Django.</p>
 
-                    <p>Take a look at my <router-link to="projects">projects</router-link> to see what I've built. Have a website or application you need help with? Contact me <a href="">here</a>.</p>
+                    <p>Take a look at my <router-link to="projects">projects</router-link> to see what I've built. Have a website or application you need help with? Contact me <router-link to="hireme">here</router-link>.</p>
 
                 </div>
 
