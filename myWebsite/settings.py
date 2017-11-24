@@ -37,8 +37,7 @@ WEBPACK_LOADER = {
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-import secret_info
-SECRET_KEY = secret_info.SECRET_KEY
+from .secret_info import SECRET_KEY
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
