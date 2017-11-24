@@ -1,0 +1,46 @@
+{
+    "status": "done",
+    "publicPath": "/",
+    "chunks": {
+        "null": [{
+            "name": "static/js/1.c9755fb03636c2767c67.js",
+            "publicPath": "/static/js/1.c9755fb03636c2767c67.js",
+            "path": "C:\\Users\\Kyle\\Projects\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\1.c9755fb03636c2767c67.js"
+        }, {
+            "name": "static/js/1.c9755fb03636c2767c67.js.map",
+            "publicPath": "/static/js/1.c9755fb03636c2767c67.js.map",
+            "path": "C:\\Users\\Kyle\\Projects\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\1.c9755fb03636c2767c67.js.map"
+        }],
+        "app": [{
+            "name": "static/js/app.48619916c3d69df69542.js",
+            "publicPath": "/static/js/app.48619916c3d69df69542.js",
+            "path": "C:\\Users\\Kyle\\Projects\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\app.48619916c3d69df69542.js"
+        }, {
+            "name": "static/css/app.846fc7805620b397f6219839f00f981f.css",
+            "publicPath": "/static/css/app.846fc7805620b397f6219839f00f981f.css",
+            "path": "C:\\Users\\Kyle\\Projects\\My-Website-V2.0\\app\\vueapp\\dist\\static\\css\\app.846fc7805620b397f6219839f00f981f.css"
+        }, {
+            "name": "static/js/app.48619916c3d69df69542.js.map",
+            "publicPath": "/static/js/app.48619916c3d69df69542.js.map",
+            "path": "C:\\Users\\Kyle\\Projects\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\app.48619916c3d69df69542.js.map"
+        }],
+        "vendor": [{
+            "name": "static/js/vendor.c14a9d06b12730135d82.js",
+            "publicPath": "/static/js/vendor.c14a9d06b12730135d82.js",
+            "path": "C:\\Users\\Kyle\\Projects\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\vendor.c14a9d06b12730135d82.js"
+        }, {
+            "name": "static/js/vendor.c14a9d06b12730135d82.js.map",
+            "publicPath": "/static/js/vendor.c14a9d06b12730135d82.js.map",
+            "path": "C:\\Users\\Kyle\\Projects\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\vendor.c14a9d06b12730135d82.js.map"
+        }],
+        "manifest": [{
+            "name": "static/js/manifest.86a7b58a12d6adfe9d71.js",
+            "publicPath": "/static/js/manifest.86a7b58a12d6adfe9d71.js",
+            "path": "C:\\Users\\Kyle\\Projects\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\manifest.86a7b58a12d6adfe9d71.js"
+        }, {
+            "name": "static/js/manifest.86a7b58a12d6adfe9d71.js.map",
+            "publicPath": "/static/js/manifest.86a7b58a12d6adfe9d71.js.map",
+            "path": "C:\\Users\\Kyle\\Projects\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\manifest.86a7b58a12d6adfe9d71.js.map"
+        }]
+    }
+}
