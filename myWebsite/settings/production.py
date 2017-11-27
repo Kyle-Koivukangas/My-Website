@@ -16,10 +16,10 @@ import sys
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-VUE_DIR = os.path.join(BASE_DIR, 'app\\vueapp\\')
+VUE_DIR = os.path.join(BASE_DIR, 'app/vueapp')
 
 # set static directory for a place for collectstatic command to put the static files
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
     # We do this so that django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
     os.path.join(VUE_DIR, 'dist'),
@@ -43,7 +43,7 @@ from .secret_info import SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["www.kylekoivukangas.com"]
+ALLOWED_HOSTS = ["www.kylekoivukangas.com", "kylekoivukangas.com"]
 
 
 # Application definition
@@ -76,7 +76,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
-        'APP_DIRS': False,
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -147,3 +147,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = "/var/www/static-root/"
+
+MEDIA_ROOT = "/var/www/media-root/"
+
