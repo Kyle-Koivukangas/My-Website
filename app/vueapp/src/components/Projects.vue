@@ -8,13 +8,13 @@
 
       <div class="content">
           <div class="hr"></div>
-          <div v-for="project in projects" :key="project.id" class="project">
+          <div v-for="project in apiProjects" :key="project" class="project">
               <div class="project-banner">
-                  <h2>{{ apiProject.name }}</h2>
+                  <h2>{{ project.name }}</h2>
               </div>
               <div class="project-description">
                   <!-- <p>{{ project.date }}</p> -->
-                  <p>{{ apiProject.description }}</p>
+                  <p>{{ project.description }}</p>
               </div>
           </div>
       </div>
