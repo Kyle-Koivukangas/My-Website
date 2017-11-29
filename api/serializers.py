@@ -25,7 +25,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = ('date', 'project_name', 'description', 'text', 'image')
+        fields = ('date', 'name', 'description', 'text', 'image')
 
     # date = serializers.DateTimeField(default=datetime.now())
     # project_name = serializers.CharField(max_length=50)

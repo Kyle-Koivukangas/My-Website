@@ -44,14 +44,23 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin', 'django.contrib.auth',
-    'django.contrib.contenttypes', 'django.contrib.sessions',
-    'django.contrib.messages', 'django.contrib.staticfiles', 'webpack_loader',
-    'rest_framework', 'app', 'api'
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'webpack_loader',
+    'rest_framework',
+    'app',
+    'api',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
+    'myWebsite.middleware.CORSMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -149,5 +158,22 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
-    'PAGE_SIZE': 10
+    'PAGE_SIZE':
+    10
 }
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8000',
+    'http://localhost:8080',
+    'http://127.0.0.1:8000',
+    'http://127.0.0.1:8080',
+)
+
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = (
+    'http://localhost:8000',
+    'http://localhost:8080',
+    'http://127.0.0.1:8000',
+    'http://127.0.0.1:8080',
+)

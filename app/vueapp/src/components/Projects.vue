@@ -6,18 +6,15 @@
           </div>
       </div>
 
-    
-
-
       <div class="content">
           <div class="hr"></div>
           <div v-for="project in projects" :key="project.id" class="project">
               <div class="project-banner">
-                  <h2>{{ project.name }}</h2>
+                  <h2>{{ apiProject.name }}</h2>
               </div>
               <div class="project-description">
                   <!-- <p>{{ project.date }}</p> -->
-                  <p>{{ project.info }}</p>
+                  <p>{{ apiProject.description }}</p>
               </div>
           </div>
       </div>
@@ -25,24 +22,39 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
-            projects: {
-                project1: {
+            projects: [
+                {
                     id: 1,
                     name: "Eco Heart Card Reader App",
                     date: "01/09/2017",
-                    info: "This is a tarrot card reader app that I'm building for my Aunt. I've made it with the Quasar mobile framework for Vue JS, this made it relatively easy to build it as a progressive web app with service workers to allow offline functionality. Being a progressive web app, it will function similar to a native app in that it can be run with or without an internet connection even though it's built using web techonologies; building it this way lets you circumvent the app store and allows you to build for every device."
+                    description: "This is a tarrot card reader app that I'm building for my Aunt. I've made it with the Quasar mobile framework for Vue JS, this made it relatively easy to build it as a progressive web app with service workers to allow offline functionality. Being a progressive web app, it will function similar to a native app in that it can be run with or without an internet connection even though it's built using web techonologies; building it this way lets you circumvent the app store and allows you to build for every device."
                 },
-                project2: {
+                {
                     id: 2,
                     name: "My personal website",
                     date: "01/10/2017",
-                    info: "My personal website; Django rest framework acts as the API for the Vue JS front end. I'm currently building the back end CMS with Django CMS. "
+                    description: "My personal website; Django rest framework acts as the API for the Vue JS front end. I'm currently building the back end CMS with Django CMS. "
                 }
-            },
+            ],
+            apiProjects: [],
+            errors: [],
         }
+    },
+    created() {
+        axios.get('projects/')
+        .then(response => {
+            console.log("response recieved")
+            console.log(response)
+            this.apiProjects = response.data
+        })
+        .catch( error => {
+            this.errors.push(error)
+        })
     },
 }
 </script>
