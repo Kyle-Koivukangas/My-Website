@@ -16,7 +16,6 @@ Vue.component('icon', Icon);
 Vue.use(Vuex)
 
 Vue.use(VueAxios, axios)
-// Vue.prototype.$http = axios
 //defining Axios instance for API calls to the back end
 //and checking to see what environment it's run in (dev environment would be localhost:8000)
 if (window.location.origin == "http://localhost:8080") {
@@ -28,18 +27,9 @@ if (window.location.origin == "http://localhost:8080") {
         "Content-Type": "application/json",
         // 'X-Requested-With': 'XMLHttpRequest',
     }
-
-    // var API = axios.create({
-    //     baseURL: 'http://127.0.0.1:8080/api/'
-    // })
 } else {
     axios.defaults.baseURL = 'http://kylekoivukangas.com/api'
-    // var API = axios.create({
-    //     baseURL: 'http://kylekoivukangas.com/api/'
-    // })
 }
-
-// axios.defaults.baseURL = 'https://api.example.com';
 
 
 Vue.config.productionTip = false;

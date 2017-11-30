@@ -14,7 +14,7 @@
               </div>
               <div class="project-description">
                   <!-- <p>{{ project.date }}</p> -->
-                  <p>{{ project.description }}</p>
+                  <p><span v-html="project.description"></span></p>
               </div>
           </div>
       </div>
@@ -23,7 +23,7 @@
 
 <script>
 import axios from 'axios';
-
+ 
 export default {
     data() {
         return {
@@ -32,7 +32,7 @@ export default {
                     id: 1,
                     name: "Eco Heart Card Reader App",
                     date: "01/09/2017",
-                    description: "This is a tarrot card reader app that I'm building for my Aunt. I've made it with the Quasar mobile framework for Vue JS, this made it relatively easy to build it as a progressive web app with service workers to allow offline functionality. Being a progressive web app, it will function similar to a native app in that it can be run with or without an internet connection even though it's built using web techonologies; building it this way lets you circumvent the app store and allows you to build for every device."
+                    description: "This is a tarrot card reader app that I'm building for my my aunt (<a href='http://ingridkoivukangas.com/'>Ingrid Koivukangas</a>). I've made it with the Quasar mobile framework for Vue JS, this made it relatively easy to build it as a progressive web app with service workers to allow offline functionality. Being a progressive web app, it will function similar to a native app in that it can be run with or without an internet connection even though it's built using web techonologies; building it this way lets you circumvent the app store and allows you to build for every device."
                 },
                 {
                     id: 2,
