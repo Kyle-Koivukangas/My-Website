@@ -8,7 +8,7 @@
 
       <div class="content">
           <div class="hr"></div>
-          <div v-for="project in apiProjects" :key="project" class="project">
+          <div v-for="project in apiProjects" :key="project.name" class="project">
               <div class="project-banner">
                   <h2>{{ project.name }}</h2>
               </div>

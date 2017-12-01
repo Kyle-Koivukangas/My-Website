@@ -16,7 +16,7 @@ const store = new Vuex.Store({
             return state.AUTH_TOKEN;
         },
     },
-    mutations: {
+    mutations: { 
         'SET_ISLOGGEDIN'(state, bool) {
             state.isLoggedIn = bool;
         },
@@ -25,6 +25,6 @@ const store = new Vuex.Store({
         },
     },
     actions: {
-        
+
     }
 });

@@ -12,33 +12,54 @@
         </transition>
         <vue-footer/>
     </div>
+    <vue-login v-if="showLogin" :show="showLogin" @close="showLogin = false"></vue-login>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'app',
-    components: {
-        vueNav: () => import("./components/Nav.vue"),
-        vueFooter: () => import("./components/Footer.vue"),
-    },
-    data() {
-        return {
-            showNav: false,
+  name: "app",
+  components: {
+    vueNav: () => import("./components/Nav.vue"),
+    vueFooter: () => import("./components/Footer.vue"),
+    vueLogin: () => import("./components/Login.vue")
+  },
+  data() {
+    return {
+      showNav: false,
+      showLogin: false,
+      counter: 0
+    };
+  },
+  methods: {
+    navTransform(show) {
+      if (show === true) {
+      }
+      if (show === false) {
+      } else {
+        console.log("invalid 'show' property; show must be boolean value");
+      }
+    }
+  },
+  created() {
+    //This listener will open the login menu after pressing escape five times in quick succession
+    var keyPressCounter = 0;
+    document.addEventListener("keydown", e => {
+      if (e.keyCode == 27) {
+        if (keyPressCounter == 0) {
+          setTimeout(() => {
+            // console.log("escapeCounterER RESET");
+            keyPressCounter = 0;
+          }, 3000);
         }
-    },
-    methods: {
-        navTransform(show) {
-            if (show === true) {
+        keyPressCounter += 1;
+      }
 
-            } if (show === false) {
-
-            } else {
-                console.log("invalid 'show' property; show must be boolean value");
-            }
-        }
-    },
-
+      if (keyPressCounter >= 5) {
+        this.showLogin = true;
+      }
+    });
+  }
 };
 </script>
 

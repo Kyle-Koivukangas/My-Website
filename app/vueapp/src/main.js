@@ -27,6 +27,15 @@ if (window.location.origin == "http://localhost:8080") {
         "Content-Type": "application/json",
         // 'X-Requested-With': 'XMLHttpRequest',
     }
+    // axios.defaults.headers.common['Access-Control-Allow-Origin'] = "*";
+} else if (window.location.origin == "http://127.0.0.1:8000") {
+    axios.defaults.baseURL = 'http://127.0.0.1:8000/api'
+    axios.defaults.headers = {
+        // "Access-Control-Allow-Origin": "*",
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        // 'X-Requested-With': 'XMLHttpRequest',
+    }
 } else {
     axios.defaults.baseURL = 'http://kylekoivukangas.com/api'
 }
