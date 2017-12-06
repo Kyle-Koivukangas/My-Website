@@ -71,10 +71,12 @@ export default {
         .then(response => {
           console.log(response);
           this.$store.dispatch("login", {
-            userName: ["this.user.name"],
-            authToken: response["data.token"]
+            userName: this.user.name,
+            authToken: response.data.token
           });
           this.close();
+          console.log(this.$store.getters.userName)
+          console.log(this.$store.getters.AUTH_TOKEN)
         })
         .catch(error => {
           console.log(error);
