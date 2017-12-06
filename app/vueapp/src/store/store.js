@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-const store = new Vuex.Store({
+export default new Vuex.Store({
     state: {
         isLoggedIn: false,
         userName: '',
@@ -15,7 +15,7 @@ const store = new Vuex.Store({
         },
         userName: state => {
             return state.userName;
-        }.
+        },
         AUTH_TOKEN: state => {
             return state.AUTH_TOKEN;
         },
@@ -32,7 +32,7 @@ const store = new Vuex.Store({
         },
     },
     actions: {
-        login( commit, { userName, authToken }) {
+        login({commit}, { userName, authToken }) {
             commit('SET_USERNAME', userName)
             commit('SET_AUTH_TOKEN', authToken)
             commit('SET_ISLOGGEDIN', true)

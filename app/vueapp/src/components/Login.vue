@@ -70,7 +70,7 @@ export default {
         })
         .then(response => {
           console.log(response);
-          store.dispatch("login", {
+          this.$store.dispatch("login", {
             userName: ["this.user.name"],
             authToken: response["data.token"]
           });
