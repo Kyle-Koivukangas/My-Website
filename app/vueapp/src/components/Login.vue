@@ -39,7 +39,7 @@ var instance = axios.create({
   timeout: 1000,
   headers: {
     // "Access-Control-Allow-Origin": "*",
-    "Accept": "application/json",
+    Accept: "application/json",
     "Content-Type": "application/json"
   }
 });
@@ -56,20 +56,25 @@ export default {
   methods: {
     handlesubmit() {
       axios
-        .post("get_auth_token", {
+        .post("get_auth_token/", {
           //   Authorization: 'token d2d5f9647d656bb4c34306a00c97f08ff7e9dde3',
           // Authorization: {'Access-Control-Allow-Origin': '*'},
           //   headers: {'Access-Control-Allow-Origin': '*'},
           //   withCredentials: true,
-            auth: {
-              username: this.user.name,
-              password: this.user.password
-            },
+          auth: {
+            username: this.user.name,
+            password: this.user.password
+          },
           username: this.user.name,
           password: this.user.password
         })
         .then(response => {
           console.log(response);
+          store.dispatch("login", {
+            userName: ["this.user.name"],
+            authToken: response["data.token"]
+          });
+          this.close();
         })
         .catch(error => {
           console.log(error);

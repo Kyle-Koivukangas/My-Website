@@ -19,7 +19,7 @@ Vue.use(VueAxios, axios)
 //defining Axios instance for API calls to the back end
 //and checking to see what environment it's run in (dev environment would be localhost:8000)
 if (window.location.origin == "http://localhost:8080") {
-    console.log("DEV ENVIRONMENT DETECTED");
+    console.log("DEV ENVIRONMENT DETECTED (Vue + Django simoultaneously [CORS])");
     axios.defaults.baseURL = 'http://127.0.0.1:8000/api'
     axios.defaults.headers = {
         // "Access-Control-Allow-Origin": "*",
@@ -29,6 +29,7 @@ if (window.location.origin == "http://localhost:8080") {
     }
     // axios.defaults.headers.common['Access-Control-Allow-Origin'] = "*";
 } else if (window.location.origin == "http://127.0.0.1:8000") {
+    console.log("DEV ENVIRONMENT DETECTED (all django build)");
     axios.defaults.baseURL = 'http://127.0.0.1:8000/api'
     axios.defaults.headers = {
         // "Access-Control-Allow-Origin": "*",
