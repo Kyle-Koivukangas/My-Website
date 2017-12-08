@@ -23,8 +23,8 @@ VUE_DIR = os.path.join(BASE_DIR, 'app/vueapp')
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
     # We do this so that django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
-    os.path.join(VUE_DIR, 'dist'),
-    os.path.join(VUE_DIR, 'dist/static'),
+    os.path.join(VUE_DIR, 'dist/'),
+    os.path.join(VUE_DIR, 'dist/static/'),
 )
 
 WEBPACK_LOADER = {
@@ -43,7 +43,7 @@ from .secret_info import SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["www.kylekoivukangas.com", "kylekoivukangas.com"]
+ALLOWED_HOSTS = ["kylekoivukangas.com", "www.kylekoivukangas.com", ]
 
 # Application definition
 
@@ -166,3 +166,5 @@ REST_FRAMEWORK = {
         'user': '1000/day'
     }
 }
+
+PREPEND_WWW = False

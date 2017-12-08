@@ -39,9 +39,8 @@ if (window.location.origin == "http://localhost:8080") {
         // 'X-Requested-With': 'XMLHttpRequest',
     }
 } else {
-    axios.defaults.baseURL = 'http://kylekoivukangas.com/api'
+    axios.defaults.baseURL = 'http://www.kylekoivukangas.com/api'
 }
-
 
 Vue.config.productionTip = false;
 

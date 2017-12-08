@@ -16,8 +16,7 @@
                 <p>What I'm currently working on:</p>
                 <ul>
                     <li>Finishing up my personal website and building a blog (backend will be made with Django CMS)</li>
-                    <li>A cool little tarrot card reading app (progressive web app made with Vue JS Quasar framework.)</li>
-                    <li>Taking a web development bootcamp in March at <a href="https://lighthouselabs.ca" target="_blank">Lighthouse Labs</a>.</li>
+                    <li>A cool little card reading app (progressive web app made with Vue JS Quasar framework.)</li>
                 </ul>
             </div>
 
