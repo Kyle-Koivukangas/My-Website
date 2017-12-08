@@ -9,46 +9,12 @@
 
             <div class="content">
                 <div>
-                    <p>I'm an independent web developer based on Salt Spring Island, BC. I work primarily with Vue JS and Django.</p>
+                    <p>I'm an independent web developer on Salt Spring Island, BC. I work primarily with Vue JS and Django.</p>
 
                     <p>Take a look at my <router-link to="projects">projects</router-link> to see what I've built. Have a website or application you need help with? Contact me <router-link to="hireme">here</router-link>.</p>
 
                 </div>
 
-
-                <!-- <div class="lorem">
-                    <h1>Home</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae porro expedita assumenda soluta explicabo repudiandae eum quod eaque molestias. Blanditiis mollitia, placeat earum quam nulla provident fugit accusantium obcaecati ipsa?
-                    Repudiandae, commodi, vero, itaque dolore nostrum numquam dolor autem distinctio quae praesentium rem possimus neque eligendi expedita odit optio accusantium eveniet blanditiis cum voluptatum sequi accusamus. Voluptate nobis aliquid officiis?
-                    Ratione perspiciatis, dolor temporibus unde ab dolorum fugiat adipisci est, exercitationem nam, non distinctio maiores deserunt? Sit rerum ullam molestias consequatur maxime. Beatae illo non provident ex dolorum laborum accusantium!
-                    Laudantium dolor soluta voluptatibus natus, nesciunt cupiditate error tempore ratione in distinctio illo optio. Ducimus temporibus vitae natus veniam ipsa fuga impedit non esse eos, excepturi sit et delectus vel?
-                    Alias vero inventore perspiciatis impedit aut corporis ut id, soluta possimus explicabo numquam deserunt velit non similique voluptates magnam voluptatem odit doloremque delectus, quia at quae sequi aliquam cumque? Fuga.
-                    Possimus corporis optio, veniam nisi, omnis magni eveniet, est ab nulla magnam rem obcaecati vel incidunt distinctio saepe dolorum non. Exercitationem saepe alias distinctio consequuntur culpa magnam et, consectetur ad.
-                    Consectetur nesciunt beatae odit? Illo repellendus suscipit beatae ut dignissimos. Autem officia iure ut officiis odit reiciendis in soluta voluptates voluptas tempora. Aut, modi est rerum laboriosam facere doloremque vitae!
-                    Accusantium corporis dignissimos aliquam fugit ratione, iusto deleniti, ipsa maiores temporibus molestias quo debitis. Pariatur quaerat a, asperiores ut vel illum officiis voluptatem! Quo velit excepturi earum reiciendis suscipit aut.
-                    Enim explicabo beatae adipisci, nobis fugit sit voluptas molestiae eius exercitationem deleniti optio amet, libero iusto ab cum dolorem repellendus rerum id dolore mollitia consequuntur alias inventore. Commodi, expedita odit?
-                    Blanditiis dicta quos error esse harum pariatur commodi distinctio, ut similique voluptates facilis cumque laborum eaque impedit possimus? Delectus asperiores ducimus magnam nulla ex laudantium voluptatibus. Rem doloremque nesciunt culpa?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae porro expedita assumenda soluta explicabo repudiandae eum quod eaque molestias. Blanditiis mollitia, placeat earum quam nulla provident fugit accusantium obcaecati ipsa?
-                    Repudiandae, commodi, vero, itaque dolore nostrum numquam dolor autem distinctio quae praesentium rem possimus neque eligendi expedita odit optio accusantium eveniet blanditiis cum voluptatum sequi accusamus. Voluptate nobis aliquid officiis?
-                    Ratione perspiciatis, dolor temporibus unde ab dolorum fugiat adipisci est, exercitationem nam, non distinctio maiores deserunt? Sit rerum ullam molestias consequatur maxime. Beatae illo non provident ex dolorum laborum accusantium!
-                    Laudantium dolor soluta voluptatibus natus, nesciunt cupiditate error tempore ratione in distinctio illo optio. Ducimus temporibus vitae natus veniam ipsa fuga impedit non esse eos, excepturi sit et delectus vel?
-                    Alias vero inventore perspiciatis impedit aut corporis ut id, soluta possimus explicabo numquam deserunt velit non similique voluptates magnam voluptatem odit doloremque delectus, quia at quae sequi aliquam cumque? Fuga.
-                    Possimus corporis optio, veniam nisi, omnis magni eveniet, est ab nulla magnam rem obcaecati vel incidunt distinctio saepe dolorum non. Exercitationem saepe alias distinctio consequuntur culpa magnam et, consectetur ad.
-                    Consectetur nesciunt beatae odit? Illo repellendus suscipit beatae ut dignissimos. Autem officia iure ut officiis odit reiciendis in soluta voluptates voluptas tempora. Aut, modi est rerum laboriosam facere doloremque vitae!
-                    Accusantium corporis dignissimos aliquam fugit ratione, iusto deleniti, ipsa maiores temporibus molestias quo debitis. Pariatur quaerat a, asperiores ut vel illum officiis voluptatem! Quo velit excepturi earum reiciendis suscipit aut.
-                    Enim explicabo beatae adipisci, nobis fugit sit voluptas molestiae eius exercitationem deleniti optio amet, libero iusto ab cum dolorem repellendus rerum id dolore mollitia consequuntur alias inventore. Commodi, expedita odit?
-                    Blanditiis dicta quos error esse harum pariatur commodi distinctio, ut similique voluptates facilis cumque laborum eaque impedit possimus? Delectus asperiores ducimus magnam nulla ex laudantium voluptatibus. Rem doloremque nesciunt culpa?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae porro expedita assumenda soluta explicabo repudiandae eum quod eaque molestias. Blanditiis mollitia, placeat earum quam nulla provident fugit accusantium obcaecati ipsa?
-                    Repudiandae, commodi, vero, itaque dolore nostrum numquam dolor autem distinctio quae praesentium rem possimus neque eligendi expedita odit optio accusantium eveniet blanditiis cum voluptatum sequi accusamus. Voluptate nobis aliquid officiis?
-                    Ratione perspiciatis, dolor temporibus unde ab dolorum fugiat adipisci est, exercitationem nam, non distinctio maiores deserunt? Sit rerum ullam molestias consequatur maxime. Beatae illo non provident ex dolorum laborum accusantium!
-                    Laudantium dolor soluta voluptatibus natus, nesciunt cupiditate error tempore ratione in distinctio illo optio. Ducimus temporibus vitae natus veniam ipsa fuga impedit non esse eos, excepturi sit et delectus vel?
-                    Alias vero inventore perspiciatis impedit aut corporis ut id, soluta possimus explicabo numquam deserunt velit non similique voluptates magnam voluptatem odit doloremque delectus, quia at quae sequi aliquam cumque? Fuga.
-                    Possimus corporis optio, veniam nisi, omnis magni eveniet, est ab nulla magnam rem obcaecati vel incidunt distinctio saepe dolorum non. Exercitationem saepe alias distinctio consequuntur culpa magnam et, consectetur ad.
-                    Consectetur nesciunt beatae odit? Illo repellendus suscipit beatae ut dignissimos. Autem officia iure ut officiis odit reiciendis in soluta voluptates voluptas tempora. Aut, modi est rerum laboriosam facere doloremque vitae!
-                    Accusantium corporis dignissimos aliquam fugit ratione, iusto deleniti, ipsa maiores temporibus molestias quo debitis. Pariatur quaerat a, asperiores ut vel illum officiis voluptatem! Quo velit excepturi earum reiciendis suscipit aut.
-                    Enim explicabo beatae adipisci, nobis fugit sit voluptas molestiae eius exercitationem deleniti optio amet, libero iusto ab cum dolorem repellendus rerum id dolore mollitia consequuntur alias inventore. Commodi, expedita odit?
-                    Blanditiis dicta quos error esse harum pariatur commodi distinctio, ut similique voluptates facilis cumque laborum eaque impedit possimus? Delectus asperiores ducimus magnam nulla ex laudantium voluptatibus. Rem doloremque nesciunt culpa?</p>
-                </div> -->
             </div>
         </div>
         <vue-footer/>

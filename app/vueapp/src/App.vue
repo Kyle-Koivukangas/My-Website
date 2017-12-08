@@ -46,7 +46,6 @@ export default {
       if (e.keyCode == 27) {
         if (keyPressCounter == 0) {
           setTimeout(() => {
-            // console.log("escapeCounterER RESET");
             keyPressCounter = 0;
           }, 3000);
         }

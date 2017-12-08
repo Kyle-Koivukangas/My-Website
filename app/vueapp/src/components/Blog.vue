@@ -31,10 +31,6 @@ export default {
   display: flex;
   justify-content: left;
   align-items: center;
-  //   background-image: url("../assets/webdevbanner.jpg");
-  //   background-image: url("../assets/stocklaptop.jpg");
-  // background-size: 1920px 1080px;
-  // background-position-y: -250px;
   & .header-container {
     text-align: center;
     width: 60%;

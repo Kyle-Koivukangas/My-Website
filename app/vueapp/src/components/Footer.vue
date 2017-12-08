@@ -54,7 +54,6 @@ $contentwidth: 900px;
     vertical-align: top;
     width: 150px;
     min-height: 30px;
-    // border: 1px solid #000;
     margin: 5px;
     & a {
       color: $darkgrey;

@@ -2,9 +2,7 @@
     <div class="navigation">
         <transition enter-active-class="slideInLeft" leave-active-class="slideOutLeft">
             <div class="sidebar fixed-top" v-if="show">
-                <!-- <div class="portrait-wrapper"> -->
                 <img class="portrait" src="../assets/Kyle.jpg" alt="">
-                <!-- </div> -->
                 <h3 class="nav-title">Kyle Koivukangas</h3>
 
                 <div class="nav-links">
@@ -51,13 +49,7 @@
             <div v-if="!showBtn" class="nav-btn fixed-top test" :class="{pushRight: show, pushLeft: !show}" @click="show = !show">
                 <icon class="times" scale="3" label="Close"></icon>
             </div>
-        </transition>
-
-        <!-- debug stuff (REMOVE BEFORE DEPLOY) -->
-        <!-- <button @click="show = !show">test</button>
-        <p>show = {{ show }}</p> -->
-
-        
+        </transition>        
 
     </div>
 </template> 
@@ -145,7 +137,6 @@ $sidebarWidth: 300px;
   z-index: 10;
   margin: 25px 0 0 25px;
   & #ico {
-    //stroke doesn't seem to work on font awesome icons..
     -webkit-text-stroke: 1px white;
     color: $darkgrey;
     text-shadow: 0px 0px 3px #fff;

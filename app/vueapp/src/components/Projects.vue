@@ -13,7 +13,6 @@
                   <h2>{{ project.name }}</h2>
               </div>
               <div class="project-description">
-                  <!-- <p>{{ project.date }}</p> -->
                   <p><span v-html="project.description"></span></p>
               </div>
           </div>
@@ -73,10 +72,6 @@ export default {
   display: flex;
   justify-content: left;
   align-items: center;
-  //   background-image: url("../assets/webdevbanner.jpg");
-  //   background-image: url("../assets/stocklaptop.jpg");
-  // background-size: 1920px 1080px;
-  // background-position-y: -250px;
   & .header-container {
     text-align: center;
     width: 60%;
@@ -84,7 +79,6 @@ export default {
     & h1 {
       font-family: $lato;
       color: $white;
-      // text-shadow: 0px 0px 3px #000;
     }
   }
 }

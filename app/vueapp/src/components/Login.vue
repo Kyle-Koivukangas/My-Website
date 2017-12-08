@@ -57,10 +57,6 @@ export default {
     handlesubmit() {
       axios
         .post("get_auth_token/", {
-          //   Authorization: 'token d2d5f9647d656bb4c34306a00c97f08ff7e9dde3',   //REMOVE IN PRODUCTION (no need to reset token for admin account, this is for dev database)
-          // Authorization: {'Access-Control-Allow-Origin': '*'},
-          //   headers: {'Access-Control-Allow-Origin': '*'},
-          //   withCredentials: true,
           auth: {
             username: this.user.name,
             password: this.user.password
@@ -75,8 +71,6 @@ export default {
             authToken: response.data.token
           });
           this.close();
-          // console.log(this.$store.getters.userName)    //REMOVE IN PRODUCTION
-          // console.log(this.$store.getters.AUTH_TOKEN)
         })
         .catch(error => {
           console.log(error);
