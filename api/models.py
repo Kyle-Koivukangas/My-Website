@@ -16,6 +16,6 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
 class Project(models.Model):
     date = models.DateTimeField(default=datetime.now(), blank=True)
     name = models.CharField(max_length=50)
-    description = models.CharField(max_length=250)
-    text = models.CharField(max_length=1000)
+    description = models.CharField(max_length=500)
+    text = models.CharField(max_length=5000)
     image = models.ImageField(upload_to='uploads', blank=True)

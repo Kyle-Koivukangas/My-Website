@@ -76,7 +76,7 @@ export default {
           });
           this.close();
           // console.log(this.$store.getters.userName)    //REMOVE IN PRODUCTION
-          // console.log(this.$store.getters.AUTH_TOKEN) 
+          // console.log(this.$store.getters.AUTH_TOKEN)
         })
         .catch(error => {
           console.log(error);
