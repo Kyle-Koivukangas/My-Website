@@ -8,13 +8,16 @@
     <div class="content">
         <h3>In development...</h3>
     </div>
+    <vue-footer/>
 </div>
   
 </template>
 
 <script>
 export default {
-
+    components: {
+        vueFooter: () => import("./Footer.vue"),
+    },
 }
 </script>
 

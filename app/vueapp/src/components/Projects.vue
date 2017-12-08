@@ -18,6 +18,7 @@
               </div>
           </div>
       </div>
+      <vue-footer/>
   </div>
 </template>
 
@@ -25,6 +26,9 @@
 import axios from 'axios';
  
 export default {
+    components: {
+        vueFooter: () => import("./Footer.vue"),
+    },
     data() {
         return {
             projects: [

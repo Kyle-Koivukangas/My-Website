@@ -13,12 +13,15 @@
                 <br>
             </div>
         </div>
+        <vue-footer/>
     </div>
 </template>
 
 <script>
 export default {
-
+    components: {
+        vueFooter: () => import("./Footer.vue"),
+    },
 }
 </script>
 

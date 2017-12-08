@@ -10,7 +10,6 @@
         <transition mode="out-in" name="fade">
             <router-view class="view" />
         </transition>
-        <vue-footer/>
     </div>
     <vue-login v-if="showLogin" :show="showLogin" @close="showLogin = false"></vue-login>
   </div>
@@ -21,7 +20,6 @@ export default {
   name: "app",
   components: {
     vueNav: () => import("./components/Nav.vue"),
-    vueFooter: () => import("./components/Footer.vue"),
     vueLogin: () => import("./components/Login.vue")
   },
   data() {

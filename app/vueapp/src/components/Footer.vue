@@ -5,9 +5,9 @@
       <div class="footlinks">
           <ul>
               <li><a href="mailto:kyle.koivukangas@gmail.com" ><icon class="ico" name="envelope" scale="1" label="Email"></icon> Email</a></li>
-              <li><a href="" ><icon class="ico" name="skype" scale="1" label="skype"></icon> Skype</a></li>
-              <li><a href="https://github.com/Kyle-Koivukangas" ><icon class="ico" name="github" scale="1" label="github"></icon> Github</a></li>
-              <li><a href="" ><icon class="ico" name="linkedin-square" scale="1" label="linkedin"></icon> LinkedIn</a></li>
+              <li><a target="_blank" href="https://api.whatsapp.com/send?phone=14036808077" ><icon class="ico" name="whatsapp" scale="1" label="whatsapp"></icon> Whatsapp</a></li>
+              <li><a target="_blank" href="https://github.com/Kyle-Koivukangas" ><icon class="ico" name="github" scale="1" label="github"></icon> Github</a></li>
+              <li><a target="_blank" href="https://www.linkedin.com/in/kyle-koivukangas" ><icon class="ico" name="linkedin-square" scale="1" label="linkedin"></icon> LinkedIn</a></li>
               <li><a href="" ><icon class="ico" name="stack-overflow" scale="1" label="stack overflow"></icon> Stack Overflow</a></li>
           </ul>
       </div>
@@ -20,7 +20,7 @@ import "vue-awesome/icons/envelope";
 import "vue-awesome/icons/github";
 import "vue-awesome/icons/linkedin-square";
 import "vue-awesome/icons/stack-overflow";
-import "vue-awesome/icons/skype";
+import "vue-awesome/icons/whatsapp";
 
 export default {
 

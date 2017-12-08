@@ -51,12 +51,16 @@
                 </div> -->
             </div>
         </div>
+        <vue-footer/>
     </div>
 </template>
 
 <script>
 export default {
     name: "Home",
+    components: {
+        vueFooter: () => import("./Footer.vue"),
+    },
     data() {
         return {};
     },
