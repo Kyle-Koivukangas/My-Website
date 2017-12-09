@@ -36,6 +36,8 @@ python manage.py migrate
 
 python manage.py runserver
 
+#You'll need to provide your own SECRET_KEY in the django settings, I have mine saved in a file called secret_info.py that the settings file imports.
+
 ```
 
 
