@@ -66,7 +66,8 @@ npm install
 npm install --save-dev webpack webpack-bundle-tracker babel babel-loader
 
 #Then Specify the following variables in Django settings: 
-# BASE_DIR, VUE_DIR (not necessary but I did this for convenience),  
+# BASE_DIR (location of base directory for Django project), 
+# VUE_DIR (Location of Vueapp base directory, not necessary but I did this for convenience),  
 # STATIC_ROOT (where you want collectstatic to put all the webpack bundles that will be served),
 # STATICFILES_DIRS (where the webpack bundles can be found (in 'dist' folder by default for Vue JS)), 
 # WEBPACK_LOADER (settings for webpackloader)
