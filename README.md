@@ -1,6 +1,6 @@
 # This is my personal website
 
-I'm using Vue JS for the front-end and Django for the backend. The two are tied nicely together with django webpack loader, which will tell Django to serve webpack bundles rather than Django templates. 
+I'm using Vue JS for the front-end and Django for the backend. The two are tied nicely together with django webpack loader, which will tell Django to serve webpack bundles rather than Django templates; and Django Rest Framework which provides the API that the front end uses to get info from the database. 
 
 ## Project Clone instructions
 
@@ -16,8 +16,8 @@ python -m venv .env
 #Activate virtual environment
 .\.env\Scripts\activate # ('source env/bin/activate' on mac, 'deactivate' will deactivate the virtual env.)
 
-#Install Django to the virtual environment
-pip install django django-webpack-loader
+#Install Django & requirements to the virtual environment
+pip install -r requirements.txt
 
 #Install webpack dependencies
 cd app/vueapp
