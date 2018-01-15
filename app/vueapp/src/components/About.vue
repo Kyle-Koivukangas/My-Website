@@ -15,7 +15,7 @@
                 <br>
                 <p>What I'm currently working on:</p>
                 <ul>
-                    <li>Finishing up my personal website and building a blog (backend will be made with Django CMS)</li>
+                    <li>Finishing up my personal website.</li>
                     <li>A cool little card reading app (progressive web app made with Vue JS Quasar framework.)</li>
                 </ul>
             </div>

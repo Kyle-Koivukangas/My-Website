@@ -3,9 +3,10 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
+from rest_framework.parsers import FormParser, MultiPartParser
 
 from api.serializers import UserSerializer, GroupSerializer, ProjectSerializer
-from api.models import Project
+from api.models import Project 
 
 @permission_classes((IsAdminUser, ))
 class UserViewSet(viewsets.ModelViewSet):
@@ -30,3 +31,16 @@ class ProjectViewSet(viewsets.ModelViewSet):
     """
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
+    parser_classes = (MultiPartParser, FormParser, )
+
+    # def perform_create(self, serializer):
+    #     serializer.save(owner=self.request.user,
+    #                    datafile=self.request.data.get('datafile'))
+
+    # @detail_route(methods=['post'])
+    # def upload_docs(request):
+    #     try:
+    #         file = request.data['file']
+    #     except KeyError:
+    #         raise ParseError('Request has no resource file attached')
+    #     project = Project.objects.create(image=file)

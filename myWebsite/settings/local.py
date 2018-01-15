@@ -147,9 +147,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# STATIC_ROOT = "/static/static-root/"
+STATIC_ROOT = "/static/static-root/"
 
-# MEDIA_ROOT = "/static/media-root/"
+MEDIA_ROOT = "/static/media-root/"
+
+MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
