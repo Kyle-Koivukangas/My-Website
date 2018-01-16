@@ -31,13 +31,15 @@ def customImagePath(instance, filename):
 class Project(models.Model):
     date        = models.DateTimeField(default=timezone.now, blank=True)
     name        = models.CharField(max_length=50)
+    slug        = models.CharField(max_length=50, blank=True)
     description = models.CharField(max_length=500)
     text        = models.CharField(max_length=5000)
     image       = models.ImageField(storage=OverwriteStorage(), upload_to=customImagePath, blank=True, null=True)
  
     def save(self, *args, **kwargs):
-        # if self.image:
-        #     self.save()
-        #     print(f"SAVED PROJECT IMAGE!")
+        if not self.slug:
+            # Create a lower-case, underscored name (slug) for use in URLs
+            self.slug = self.name.replace(' ', '_').lower()
+            print("SAVED PROJECT SLUG!")
         super(Project, self).save(*args, **kwargs)
 

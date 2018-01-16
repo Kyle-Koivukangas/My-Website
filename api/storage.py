@@ -26,5 +26,5 @@ class OverwriteStorage(FileSystemStorage):
         if self.exists(name):
             os.remove(os.path.join(settings.MEDIA_ROOT, name))
 
-        # edited return for max length from suggestion here: https://gist.github.com/fabiomontefuscolo/1584462
+        # Edited return for max length from suggestion here: https://gist.github.com/fabiomontefuscolo/1584462
         return super(OverwriteStorage, self).get_available_name(name, max_length)

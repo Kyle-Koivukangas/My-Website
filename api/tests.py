@@ -1,6 +1,8 @@
 from django.test import TestCase, APITestCase
 
 # tests.py
+
+
 class FileUploadTests(APITestCase):
 
     def setUp(self):
@@ -39,7 +41,7 @@ class FileUploadTests(APITestCase):
         self.assertTrue(urlparse(
             response.data['datafile']).path.startswith(settings.MEDIA_URL))
         self.assertEqual(response.data['owner'],
-                       User.objects.get_by_natural_key('test').id)
+                         User.objects.get_by_natural_key('test').id)
         self.assertIn('created', response.data)
 
         # assert unauthenticated user can not upload file

@@ -19,5 +19,5 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = ('date', 'name', 'description', 'text', 'image')
+        fields = ('date', 'name', 'slug', 'description', 'text', 'image')
         

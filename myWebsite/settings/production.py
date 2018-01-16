@@ -41,7 +41,7 @@ WEBPACK_LOADER = {
 from .secret_info import SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["kylekoivukangas.com", "www.kylekoivukangas.com", ]
 
@@ -149,6 +149,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = "/var/www/static-root/"
 
 MEDIA_ROOT = "/var/www/media-root/"
+
+MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
