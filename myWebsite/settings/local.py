@@ -22,7 +22,15 @@ BASE_DIR = os.path.dirname(
 VUE_DIR = os.path.join(BASE_DIR, 'app\\vueapp\\')
 
 # set static directory for a place for collectstatic command to put the static files
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+MEDIA_ROOT =  os.path.join(BASE_DIR, "/static/media-root/")
+MEDIA_URL = '/media/'
+
+STATIC_ROOT =  os.path.join(BASE_DIR, "/static/static-root/")
+STATIC_URL = '/static/'
+
 STATICFILES_DIRS = (
     # We do this so that django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
     os.path.join(VUE_DIR, 'dist'),
@@ -145,13 +153,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
 
-STATIC_ROOT = "/static/static-root/"
-
-MEDIA_ROOT = "/static/media-root/"
-
-MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

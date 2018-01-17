@@ -9,7 +9,7 @@
       <div class="content">
           <div class="hr"></div>
           <div v-for="project in apiProjects" :key="project.name" class="project">
-              <div :style="{backgroundImage: `url(${project.image})` }" class="project-banner">
+              <div :style="{backgroundImage: 'url(' + project.image + ')' }" class="project-banner">
                   <h2>{{ project.name }}</h2>
               </div>
               <div class="project-description">
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+
 import axios from "axios";
 
 export default {
@@ -69,7 +70,7 @@ export default {
                 });
         } else {
             axios
-                .get("projects/")
+                .get("http://www.kylekoivukangas.com/api/projects/")
                 .then(response => {
                     console.log("response recieved");
                     console.log(response);

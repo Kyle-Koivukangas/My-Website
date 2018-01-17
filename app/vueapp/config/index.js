@@ -13,7 +13,7 @@ module.exports = {
         assetsSubDirectory: 'static',
         // Changed assetsPublicPath setting from '/' to './' to attempt
         // to fix dynamic background image pathing. (2018/01/15) - Kyle
-        assetsPublicPath: './',
+        assetsPublicPath: '/',
         productionSourceMap: true,
         // Gzip off by default as many popular static hosts such as
         // Surge or Netlify already gzip all static assets for you.

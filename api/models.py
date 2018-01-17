@@ -24,10 +24,22 @@ def customImagePath(instance, filename):
 
     if instance.name:
         filename = "{}.{}".format(instance.name.lower(), ext)
+
+    print(os.path.join('images', filename))
     
     return os.path.join('images', filename)
 
-#models
+def vueProjectAssetPath(instance, filename):
+    """ Returns path to vueapp assets with instance slug as the filename. """
+    ext = filename.split('.')[-1]
+
+    if instance.slug:
+        filename = "{}.{}".format(instance.slug.lower(), ext)
+    
+    return os.path.join(settings.VUE_DIR, 'static', filename)
+
+
+# Models
 class Project(models.Model):
     date        = models.DateTimeField(default=timezone.now, blank=True)
     name        = models.CharField(max_length=50)
@@ -41,5 +53,6 @@ class Project(models.Model):
             # Create a lower-case, underscored name (slug) for use in URLs
             self.slug = self.name.replace(' ', '_').lower()
             print("SAVED PROJECT SLUG!")
+
         super(Project, self).save(*args, **kwargs)
 
