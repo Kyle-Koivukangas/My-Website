@@ -36,6 +36,12 @@ python manage.py migrate
 
 python manage.py runserver
 
+#if you want to test webpack loader, you should first build the vue app for production
+npm run build # run this in vueapp folder
+# then run this in root folder to collect static vue build files
+python manage.py collectstatic
+#NOTE: You may also have to copy a version of index.html from static folder to root (after running collectstatic, ofcourse).
+
 #You'll need to provide your own SECRET_KEY in the django settings, I have mine saved in a file called secret_info.py that the settings file imports.
 
 ```

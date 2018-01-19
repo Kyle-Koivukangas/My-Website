@@ -9,15 +9,20 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
-
+from __future__ import absolute_import, unicode_literals
 import os
 import sys
+
+from django.utils.translation import ugettext_lazy as _
+
+from .secret_info import SECRET_KEY
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-VUE_DIR = os.path.join(BASE_DIR, 'app/vueapp')
+VUE_DIR = os.path.join(BASE_DIR, 'app', 'vueapp')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media-root/')
 MEDIA_URL = '/media/'
@@ -30,7 +35,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     # We do this so that django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
     os.path.join(VUE_DIR, 'dist/'),
-    os.path.join(VUE_DIR, 'dist/static/'),
+    os.path.join(VUE_DIR, 'dist', 'static/'),
 )
 
 WEBPACK_LOADER = {
@@ -52,51 +57,85 @@ ALLOWED_HOSTS = ["kylekoivukangas.com", "www.kylekoivukangas.com", ]
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+INSTALLED_APPS = (
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.redirects",
+    "django.contrib.sessions",
+    "django.contrib.sites",
+    "django.contrib.sitemaps",
+    "django.contrib.staticfiles",
     'webpack_loader',
     'rest_framework',
     'rest_framework.authtoken',
     'app',
     'api',
-]
+    "mezzanine.boot",
+    "mezzanine.conf",
+    "mezzanine.core",
+    "mezzanine.generic",
+    "mezzanine.pages",
+    "mezzanine.blog",
+    "mezzanine.forms",
+    "mezzanine.galleries",
+    "mezzanine.twitter",
+    # "mezzanine.accounts",
+    # "mezzanine.mobile",
+)
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
+    "mezzanine.core.middleware.UpdateCacheMiddleware",
+
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # Uncomment if using internationalisation or localisation
+    # 'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+
+    "mezzanine.core.request.CurrentRequestMiddleware",
+    "mezzanine.core.middleware.RedirectFallbackMiddleware",
+    "mezzanine.core.middleware.TemplateForDeviceMiddleware",
+    "mezzanine.core.middleware.TemplateForHostMiddleware",
+    "mezzanine.core.middleware.AdminLoginInterfaceSelectorMiddleware",
+    "mezzanine.core.middleware.SitePermissionMiddleware",
+    "mezzanine.pages.middleware.PageMiddleware",
+    "mezzanine.core.middleware.FetchFromCacheMiddleware",
+)
 
 ROOT_URLCONF = 'myWebsite.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [
+            os.path.join(PROJECT_ROOT, "templates"),
+            os.path.join(BASE_DIR, 'static'),
+            os.path.join(BASE_DIR, )
+        ],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.debug",
+                "django.template.context_processors.i18n",
+                "django.template.context_processors.static",
+                "django.template.context_processors.media",
+                "django.template.context_processors.request",
+                "django.template.context_processors.tz",
+                "mezzanine.conf.context_processors.settings",
+                "mezzanine.pages.context_processors.page",
+            ],
+            "builtins": [
+                "mezzanine.template.loader_tags",
             ],
         },
-        'DIRS': (os.path.join(BASE_DIR, 'static'), ),
-        # 'loaders': (
-        #     'django.template.loaders.filesystem.Loader',
-        #     'django.template.loaders.app_directories.Loader',
-        #     #     'django.template.loaders.eggs.Loader',
-        # ),
     },
 ]
 
@@ -169,4 +208,52 @@ REST_FRAMEWORK = {
 }
 
 PREPEND_WWW = True
+
+######################
+# Mezzanine Settings #
+######################
+# If True, the django-modeltranslation will be added to the
+# INSTALLED_APPS setting.
+USE_MODELTRANSLATION = False
+# Supported languages
+LANGUAGES = (
+    ('en', _('English')),
+)
+# Whether a user's session cookie expires when the Web browser is closed.
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
+# The numeric mode to set newly-uploaded files to. The value should be
+# a mode you'd pass directly to os.chmod.
+FILE_UPLOAD_PERMISSIONS = 0o644
+# Full filesystem path to the project.
+PROJECT_APP_PATH = os.path.dirname(os.path.abspath(__file__))
+PROJECT_APP = os.path.basename(PROJECT_APP_PATH)
+PROJECT_ROOT = BASE_DIR = os.path.dirname(PROJECT_APP_PATH)
+
+CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_APP
+# Package/module name to import the root urlpatterns from for the project.
+ROOT_URLCONF = "%s.urls" % PROJECT_APP
+# Store these package names here as they may change in the future since
+# at the moment we are using custom forks of them.
+PACKAGE_NAME_FILEBROWSER = "filebrowser_safe"
+PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
+# These will be added to ``INSTALLED_APPS``, only if available.
+OPTIONAL_APPS = (
+    "debug_toolbar",
+    "django_extensions",
+    "compressor",
+    PACKAGE_NAME_FILEBROWSER,
+    PACKAGE_NAME_GRAPPELLI,
+)
+
+
+try:
+    from mezzanine.utils.conf import set_dynamic_settings
+except ImportError:
+    pass
+else:
+    set_dynamic_settings(globals())
 
