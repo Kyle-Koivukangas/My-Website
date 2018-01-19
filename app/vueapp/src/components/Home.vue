@@ -3,13 +3,13 @@
         <div class="main">
             <div class="main-banner">
                 <div class="header-container">
-                    <h1>Hi, I'm Kyle. I design 	&amp; build<br>full-stack web applications.</h1>
+                    <h1>Hi, I'm Kyle.<br>I design &amp; build web apps.</h1>
                 </div>
             </div>
 
             <div class="content">
                 <div>
-                    <p>I'm an independent web developer on Salt Spring Island, BC. I work primarily with Vue JS and Django.</p>
+                    <p>I'm a web developer on Salt Spring Island, BC. I work primarily with Vue JS and Django.</p>
 
                     <p>Take a look at my <router-link to="projects">projects</router-link> to see what I've built. Have a website or application you need help with? Contact me <router-link to="hireme">here</router-link>.</p>
 
@@ -34,7 +34,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Josefin+Slab|Ubuntu|Ubuntu+Condensed|Vollkorn|Lato");
 $josefin: "Josefin Slab", serif;
 $vollkorn: "Vollkorn", serif;
@@ -66,6 +66,9 @@ $lato: "Lato", sans-serif;
   & h1 {
     font-family: $lato;
     color: $white;
+    text-align: left;
+    width: 80%;
+    margin: auto;
     // text-shadow: 0px 0px 3px #000;
   }
 }

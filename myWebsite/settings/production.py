@@ -47,8 +47,7 @@ WEBPACK_LOADER = {
 from .secret_info import SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+DEBUG = False
 ALLOWED_HOSTS = ["kylekoivukangas.com", "www.kylekoivukangas.com", ]
 
 # Application definition
@@ -62,6 +61,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webpack_loader',
     'rest_framework',
+    'rest_framework.authtoken',
     'app',
     'api',
 ]
@@ -157,7 +157,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ],
     'PAGE_SIZE': 10,
     'DEFAULT_THROTTLE_CLASSES': ('rest_framework.throttling.AnonRateThrottle',
@@ -168,4 +168,5 @@ REST_FRAMEWORK = {
     }
 }
 
-PREPEND_WWW = False
+PREPEND_WWW = True
+

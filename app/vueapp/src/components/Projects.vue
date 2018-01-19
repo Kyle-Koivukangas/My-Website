@@ -16,13 +16,20 @@
                   <p><span v-html="project.description"></span></p>
               </div>
           </div>
+        <div v-if="apiFailed" v-for="project in projects" :key="project.name" class="project">
+              <div :style="{backgroundImage: 'url(' + project.image + ')' }" class="project-banner">
+                  <h2>{{ project.name }}</h2>
+              </div>
+              <div class="project-description">
+                  <p><span v-html="project.description"></span></p>
+              </div>
+          </div>
       </div>
       <vue-footer/>
   </div>
 </template>
 
 <script>
-
 import axios from "axios";
 
 export default {
@@ -37,18 +44,21 @@ export default {
                     name: "Eco Heart Card Reader App",
                     date: "01/09/2017",
                     description:
-                        "This is a tarrot card reader app that I'm building for my my aunt (<a href='http://ingridkoivukangas.com/'>Ingrid Koivukangas</a>). I've made it with the Quasar mobile framework for Vue JS, this made it relatively easy to build it as a progressive web app with service workers to allow offline functionality. Being a progressive web app, it will function similar to a native app in that it can be run with or without an internet connection even though it's built using web techonologies; building it this way lets you circumvent the app store and allows you to build for every device.",
+                        "This is a card/fortune reading app that I'm currently building for environmental artist - <a target='_blank' href='http://www.ingridkoivukangas.com'>Ingrid Koivukangas</a>. It's based on her Eco Heart Oracle deck, you can see a demo of it <a target='_blank' href='http://kyle-koivukangas.github.io/CardOracle'>here</a>.",
+                    image: "https://www.kylekoivukangas.com/media/images/eco_heart_oracle.jpg",
                 },
                 {
                     id: 2,
                     name: "My personal website",
                     date: "01/10/2017",
                     description:
-                        "My personal website; Django rest framework acts as the API for the Vue JS front end. I'm currently building the back end CMS with Django CMS. ",
+                        "My personal website, Django rest framework acts as the API for the Vue JS front end.",
+                    image: "https://www.kylekoivukangas.com/media/images/my_website.jpg",
                 },
             ],
             apiProjects: [],
             errors: [],
+            apiFailed: false,
         };
     },
     created() {
@@ -57,7 +67,7 @@ export default {
             axios
                 .get(
                     "https://allorigins.me/get?method=raw&url=" +
-                        encodeURIComponent("http://www.kylekoivukangas.com/api/projects/") +
+                        encodeURIComponent("https://www.kylekoivukangas.com/api/projects/") +
                         "&callback=?"
                 )
                 .then(response => {
@@ -70,7 +80,7 @@ export default {
                 });
         } else {
             axios
-                .get("http://www.kylekoivukangas.com/api/projects/")
+                .get("https://www.kylekoivukangas.com/api/projects/")
                 .then(response => {
                     console.log("response recieved");
                     console.log(response);
@@ -78,6 +88,7 @@ export default {
                 })
                 .catch(error => {
                     this.errors.push(error);
+                    this.apiFailed = true;
                 });
         }
     },
