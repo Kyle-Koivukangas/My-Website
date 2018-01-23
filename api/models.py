@@ -25,7 +25,7 @@ def customImagePath(instance, filename):
     if instance.name:
         filename = "{}.{}".format(instance.name.lower(), ext)
 
-    print(os.path.join('images', filename))
+    # print(os.path.join('images', filename))
     
     return os.path.join('images', filename)
 
