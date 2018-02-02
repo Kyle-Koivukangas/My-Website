@@ -74,7 +74,7 @@ $lato: "Lato", sans-serif;
 }
 .main {
   font-family: $ubuntu;
-  background-color: $white;
+//   background-color: $white;
 }
 .content {
   margin: auto;

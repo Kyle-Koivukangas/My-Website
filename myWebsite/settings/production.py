@@ -17,6 +17,49 @@ from django.utils.translation import ugettext_lazy as _
 
 from .secret_info import SECRET_KEY
 
+######################
+# Mezzanine Settings ##########################################################
+######################
+# If True, the django-modeltranslation will be added to the
+# INSTALLED_APPS setting.
+USE_MODELTRANSLATION = False
+# Supported languages
+LANGUAGES = (
+    ('en', _('English')),
+)
+# Whether a user's session cookie expires when the Web browser is closed.
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
+# The numeric mode to set newly-uploaded files to. The value should be
+# a mode you'd pass directly to os.chmod.
+FILE_UPLOAD_PERMISSIONS = 0o644
+# Full filesystem path to the project.
+PROJECT_APP_PATH = os.path.dirname(os.path.abspath(__file__))
+PROJECT_APP = os.path.basename(PROJECT_APP_PATH)
+PROJECT_ROOT = BASE_DIR = os.path.dirname(PROJECT_APP_PATH)
+
+CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_APP
+# Package/module name to import the root urlpatterns from for the project.
+ROOT_URLCONF = "%s.urls" % PROJECT_APP
+# Store these package names here as they may change in the future since
+# at the moment we are using custom forks of them.
+PACKAGE_NAME_FILEBROWSER = "filebrowser_safe"
+PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
+# These will be added to ``INSTALLED_APPS``, only if available.
+OPTIONAL_APPS = (
+    "debug_toolbar",
+    "django_extensions",
+    "compressor",
+    PACKAGE_NAME_FILEBROWSER,
+    PACKAGE_NAME_GRAPPELLI,
+)
+
+
+###############################################################################
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(
@@ -210,46 +253,9 @@ REST_FRAMEWORK = {
 
 PREPEND_WWW = True
 
-######################
-# Mezzanine Settings #
-######################
-# If True, the django-modeltranslation will be added to the
-# INSTALLED_APPS setting.
-USE_MODELTRANSLATION = False
-# Supported languages
-LANGUAGES = (
-    ('en', _('English')),
-)
-# Whether a user's session cookie expires when the Web browser is closed.
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
-SITE_ID = 1
 
-AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
-# The numeric mode to set newly-uploaded files to. The value should be
-# a mode you'd pass directly to os.chmod.
-FILE_UPLOAD_PERMISSIONS = 0o644
-# Full filesystem path to the project.
-PROJECT_APP_PATH = os.path.dirname(os.path.abspath(__file__))
-PROJECT_APP = os.path.basename(PROJECT_APP_PATH)
-PROJECT_ROOT = BASE_DIR = os.path.dirname(PROJECT_APP_PATH)
-
-CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_APP
-# Package/module name to import the root urlpatterns from for the project.
-ROOT_URLCONF = "%s.urls" % PROJECT_APP
-# Store these package names here as they may change in the future since
-# at the moment we are using custom forks of them.
-PACKAGE_NAME_FILEBROWSER = "filebrowser_safe"
-PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
-# These will be added to ``INSTALLED_APPS``, only if available.
-OPTIONAL_APPS = (
-    "debug_toolbar",
-    "django_extensions",
-    "compressor",
-    PACKAGE_NAME_FILEBROWSER,
-    PACKAGE_NAME_GRAPPELLI,
-)
-
+### Mezzanine Dynamic settings import ###
 
 try:
     from mezzanine.utils.conf import set_dynamic_settings
