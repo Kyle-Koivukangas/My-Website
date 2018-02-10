@@ -1,6 +1,6 @@
 .vscode
 secret_info.py
-webpack_stats.json
+# webpack_stats.json
 static/
 .env2
 
@@ -22,7 +22,7 @@ eggs/
 lib/
 lib64/
 parts/
-sdist/
+# sdist/
 var/
 *.egg-info/
 .installed.cfg
