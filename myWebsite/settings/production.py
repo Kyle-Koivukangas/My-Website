@@ -70,6 +70,10 @@ VUE_DIR = os.path.join(BASE_DIR, 'app', 'vueapp')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static_files', 'media-root/')
 MEDIA_URL = '/media/'
 
+#NOTE: Reminder! You changed the name of the static files Directory, DON'T FORGET TO UPDATE THAT IN THE NGINX SERVER BLOCK!!!!
+# I REPEAT,  DON'T FORGET TO UPDATE THE STATIC FILES FOLDER NAME THE NGINX SERVER BLOCK!!!!
+# (use alias instead of root. I think that will work better/be easier for me to understand/read)
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 STATIC_URL = '/static/'
 
