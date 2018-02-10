@@ -1,1 +1,68 @@
-{"status":"done","publicPath":"/","chunks":{"null":[{"name":"static/js/2.724ed2f53d5c69a3fb83.js","publicPath":"/static/js/2.724ed2f53d5c69a3fb83.js","path":"C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\2.724ed2f53d5c69a3fb83.js"},{"name":"static/js/2.724ed2f53d5c69a3fb83.js.map","publicPath":"/static/js/2.724ed2f53d5c69a3fb83.js.map","path":"C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\2.724ed2f53d5c69a3fb83.js.map"}],"vendor":[{"name":"static/js/vendor.a191195f02b8b0b79062.js","publicPath":"/static/js/vendor.a191195f02b8b0b79062.js","path":"C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\vendor.a191195f02b8b0b79062.js"},{"name":"static/js/vendor.a191195f02b8b0b79062.js.map","publicPath":"/static/js/vendor.a191195f02b8b0b79062.js.map","path":"C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\vendor.a191195f02b8b0b79062.js.map"}],"app":[{"name":"static/js/app.09c91333c62722f1b641.js","publicPath":"/static/js/app.09c91333c62722f1b641.js","path":"C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\app.09c91333c62722f1b641.js"},{"name":"static/css/app.42c69c98d14f3ca947bdf2f89e7ee7d5.css","publicPath":"/static/css/app.42c69c98d14f3ca947bdf2f89e7ee7d5.css","path":"C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\css\\app.42c69c98d14f3ca947bdf2f89e7ee7d5.css"},{"name":"static/js/app.09c91333c62722f1b641.js.map","publicPath":"/static/js/app.09c91333c62722f1b641.js.map","path":"C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\app.09c91333c62722f1b641.js.map"}],"manifest":[{"name":"static/js/manifest.fe69deb0e510f8f6f5d2.js","publicPath":"/static/js/manifest.fe69deb0e510f8f6f5d2.js","path":"C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\manifest.fe69deb0e510f8f6f5d2.js"},{"name":"static/js/manifest.fe69deb0e510f8f6f5d2.js.map","publicPath":"/static/js/manifest.fe69deb0e510f8f6f5d2.js.map","path":"C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\manifest.fe69deb0e510f8f6f5d2.js.map"}]}}
+{
+    "status": "done",
+    "publicPath": "/",
+    "chunks": {
+        "null": [
+            {
+                "name": "static/js/2.724ed2f53d5c69a3fb83.js",
+                "publicPath": "/static/js/2.724ed2f53d5c69a3fb83.js",
+                "path":
+                    "C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\2.724ed2f53d5c69a3fb83.js"
+            },
+            {
+                "name": "static/js/2.724ed2f53d5c69a3fb83.js.map",
+                "publicPath": "/static/js/2.724ed2f53d5c69a3fb83.js.map",
+                "path":
+                    "C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\2.724ed2f53d5c69a3fb83.js.map"
+            }
+        ],
+        "vendor": [
+            {
+                "name": "static/js/vendor.a191195f02b8b0b79062.js",
+                "publicPath": "/static/js/vendor.a191195f02b8b0b79062.js",
+                "path":
+                    "C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\vendor.a191195f02b8b0b79062.js"
+            },
+            {
+                "name": "static/js/vendor.a191195f02b8b0b79062.js.map",
+                "publicPath": "/static/js/vendor.a191195f02b8b0b79062.js.map",
+                "path":
+                    "C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\vendor.a191195f02b8b0b79062.js.map"
+            }
+        ],
+        "app": [
+            {
+                "name": "static/js/app.09c91333c62722f1b641.js",
+                "publicPath": "/static/js/app.09c91333c62722f1b641.js",
+                "path":
+                    "C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\app.09c91333c62722f1b641.js"
+            },
+            {
+                "name": "static/css/app.42c69c98d14f3ca947bdf2f89e7ee7d5.css",
+                "publicPath": "/static/css/app.42c69c98d14f3ca947bdf2f89e7ee7d5.css",
+                "path":
+                    "C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\css\\app.42c69c98d14f3ca947bdf2f89e7ee7d5.css"
+            },
+            {
+                "name": "static/js/app.09c91333c62722f1b641.js.map",
+                "publicPath": "/static/js/app.09c91333c62722f1b641.js.map",
+                "path":
+                    "C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\app.09c91333c62722f1b641.js.map"
+            }
+        ],
+        "manifest": [
+            {
+                "name": "static/js/manifest.fe69deb0e510f8f6f5d2.js",
+                "publicPath": "/static/js/manifest.fe69deb0e510f8f6f5d2.js",
+                "path":
+                    "C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\manifest.fe69deb0e510f8f6f5d2.js"
+            },
+            {
+                "name": "static/js/manifest.fe69deb0e510f8f6f5d2.js.map",
+                "publicPath": "/static/js/manifest.fe69deb0e510f8f6f5d2.js.map",
+                "path":
+                    "C:\\Users\\Kyle\\Projects\\myWebsiteBACKUP\\My-Website-V2.0\\app\\vueapp\\dist\\static\\js\\manifest.fe69deb0e510f8f6f5d2.js.map"
+            }
+        ]
+    }
+}

@@ -91,14 +91,14 @@ VUE_DIR = os.path.join(BASE_DIR, 'app', 'vueapp')
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-MEDIA_ROOT =  os.path.join(BASE_DIR, "static", "media-root")
+MEDIA_ROOT =  os.path.join(BASE_DIR, "static_files", "media-root")
 MEDIA_URL = '/media/'
 
-STATIC_ROOT =  os.path.join(BASE_DIR, "static")
+STATIC_ROOT =  os.path.join(BASE_DIR, "static_files")
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    # We do this so that django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
+    # We do this so that django's collectstatic_files copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
     os.path.join(VUE_DIR, 'dist'),
     os.path.join(VUE_DIR, 'dist', 'static'),
 )
@@ -175,7 +175,7 @@ TEMPLATES = [
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
             os.path.join(PROJECT_ROOT, "templates"),
-            os.path.join(BASE_DIR, 'static'),
+            os.path.join(BASE_DIR, 'static_files'),
             os.path.join(BASE_DIR, )
         ],
         "APP_DIRS": True,

@@ -67,10 +67,10 @@ BASE_DIR = os.path.dirname(
 
 VUE_DIR = os.path.join(BASE_DIR, 'app', 'vueapp')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media-root/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static_files', 'media-root/')
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 STATIC_URL = '/static/'
 
 # set static directory for a place for collectstatic command to put the static files
@@ -159,7 +159,7 @@ TEMPLATES = [
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
             os.path.join(PROJECT_ROOT, "templates"),
-            os.path.join(BASE_DIR, 'static'),
+            os.path.join(BASE_DIR, 'static_files'),
             os.path.join(BASE_DIR, )
         ],
         "APP_DIRS": True,

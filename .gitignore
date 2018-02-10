@@ -1,7 +1,7 @@
 .vscode
 secret_info.py
 # webpack_stats.json
-static/
+static_files/
 .env2
 
 # Byte-compiled / optimized / DLL files
