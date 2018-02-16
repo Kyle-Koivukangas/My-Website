@@ -22,6 +22,7 @@ from django.utils.translation import ugettext_lazy as _
 # NOTE: I should probably tidy this up at some point. As of writing this, production settings are tidy but local ones aren't...
 
 
+
 ######################
 # Mezzanine Settings #
 ######################
