@@ -23,7 +23,6 @@ VUE_DIR = os.path.join(BASE_DIR, 'app\\vueapp\\')
 # set static directory for a place for collectstatic command to put the static files
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
-    # We do this so sthat django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
     os.path.join(VUE_DIR, 'dist'),
     os.path.join(VUE_DIR, 'dist/static'),
 )
