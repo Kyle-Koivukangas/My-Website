@@ -32,7 +32,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 PREPEND_WWW = False
-# APPEND_SLASH = False
+APPEND_SLASH = False
 
 ##### Path Settings ######
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -83,7 +83,6 @@ OPTIONAL_APPS = (
 #####################
 ### Main Settings ###
 #####################
-
 
 # Directories to collect staticfiles from
 STATICFILES_DIRS = (
@@ -215,7 +214,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
-# https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 # If True, the django-modeltranslation will be added to the
 # INSTALLED_APPS setting.
@@ -240,6 +238,7 @@ USE_TZ = True
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
+# https://docs.djangoproject.com/en/1.11/topics/i18n/
 USE_I18N = True
 
 USE_L10N = True

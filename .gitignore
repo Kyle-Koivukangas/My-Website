@@ -1,9 +1,13 @@
 .vscode
-secret_info.py
 # webpack_stats.json
 static_files/
 .env2
+*.sqlite3
+
+# Django local dev files
+secret_info.py
 local.py
+base.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
