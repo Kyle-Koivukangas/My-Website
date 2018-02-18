@@ -32,7 +32,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 PREPEND_WWW = False
-APPEND_SLASH = False
+APPEND_SLASH = True
 
 ##### Path Settings ######
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -124,7 +124,7 @@ INSTALLED_APPS = (
     # "mezzanine.mobile",
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.middleware.security.SecurityMiddleware',
     "mezzanine.core.middleware.UpdateCacheMiddleware",
 
@@ -140,8 +140,6 @@ MIDDLEWARE_CLASSES = (
 
     "mezzanine.core.request.CurrentRequestMiddleware",
     "mezzanine.core.middleware.RedirectFallbackMiddleware",
-    "mezzanine.core.middleware.TemplateForDeviceMiddleware",
-    "mezzanine.core.middleware.TemplateForHostMiddleware",
     "mezzanine.core.middleware.AdminLoginInterfaceSelectorMiddleware",
     "mezzanine.core.middleware.SitePermissionMiddleware",
     "mezzanine.pages.middleware.PageMiddleware",

@@ -10,6 +10,9 @@ local.py
 base.py
 staging.py
 
+media/
+templates/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
