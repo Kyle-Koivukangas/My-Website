@@ -8,6 +8,7 @@ static_files/
 secret_info.py
 local.py
 base.py
+staging.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
