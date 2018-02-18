@@ -35,7 +35,7 @@ PREPEND_WWW = False
 # APPEND_SLASH = False
 
 ##### Path Settings ######
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 VUE_DIR = os.path.join(BASE_DIR, 'app', 'vueapp')
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static_files")
@@ -59,7 +59,7 @@ AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
 # a mode you'd pass directly to os.chmod.
 FILE_UPLOAD_PERMISSIONS = 0o644
 # Full filesystem path to the project.
-PROJECT_APP_PATH = os.path.dirname(os.path.abspath(__file__))
+PROJECT_APP_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_APP = os.path.basename(PROJECT_APP_PATH)
 PROJECT_ROOT = BASE_DIR = os.path.dirname(PROJECT_APP_PATH)
 
