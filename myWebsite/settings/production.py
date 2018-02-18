@@ -35,7 +35,7 @@ PREPEND_WWW = False
 # APPEND_SLASH = False
 
 ##### Path Settings ######
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 VUE_DIR = os.path.join(BASE_DIR, 'app', 'vueapp')
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static_files")
