@@ -6,43 +6,65 @@ I'm using Vue JS for the front-end and Django for the backend. The two are tied 
 
 Commands to clone project, set up environment and get it running:
 ```bash
-#Git clone project
+#Git clone project:
 git clone https://github.com/Kyle-Koivukangas/My-Website-V2.0.git
 
-#Set up Python virtual environment (in main project folder)
+#Set up Python virtual environment (in main project folder):
 cd My-website-V2.0
 python -m venv .env
+#If you prefer to use virtualenvwrapper then:
+mkvirtualenv myWebsite #Or whatever you want to call the virtual env.
 
-#Activate virtual environment
+
+#Activate virtual environment:
 .\.env\Scripts\activate # ('source env/bin/activate' on mac, 'deactivate' will deactivate the virtual env.)
+#Or 
+workon myWebsite #if you prefer to use virtualenvwrapper
 
-#Install Django & requirements to the virtual environment
+#Install Django & requirements to the virtual environment:
 pip install -r requirements.txt
 
-#Install webpack dependencies
+#Install webpack dependencies:
 cd app/vueapp
 npm install
 
+#Build the Vue app:
+npm run build
 
-#Run dev build of vue front-end app (make sure you're in the 'vueapp' folder)
-npm run dev
+#Create database with mezzanine helper function:
+cd ../.. #(just make sure you're in base django project directory)
+python manage.py createdb
 
-#Run django back-end in another window (you can run both simoultaneously during development)
-cd My-website-V2.0 #(just make sure you're in main django project folder)
-
-#(do your model migrations if needed)
+#Do your model migrations if needed, you shouldn't have to right after running createdb though.:
 python manage.py makemigrations
 python manage.py migrate
 
+#Collect templates and static files:
+python manage.py collecttemplates
+python manage.py collectstatic
+#NOTE: The order matters here, you should run collecttemplates first, then collectstatic;
+# this allows the webpack loader template (index.html) to overwrite Mezzanines default index.html.
+
+#NOTE: You'll also need to provide your own SECRET_KEY in the django settings, 
+#I have mine saved in a file called secret_info.py that the settings file imports.
+
+#Start 'er up:
 python manage.py runserver
 
-#if you want to test webpack loader, you should first build the vue app for production
-npm run build # run this in vueapp folder
-# then run this in root folder to collect static vue build files
-python manage.py collectstatic
-#NOTE: You may also have to copy a version of index.html from static folder to root (after running collectstatic, ofcourse).
 
-#You'll need to provide your own SECRET_KEY in the django settings, I have mine saved in a file called secret_info.py that the settings file imports.
+
+## During Development:
+
+#You can run both Django and Vue simoultaneously during development, 
+#Use Vue for hotreloading during front-end development and django just to supply the API.
+#From the base django directory, run django back-end in another window:
+python manage.py runserver
+
+#From 'vueapp' directory, run dev build of vue front-end app:
+npm run dev
+
+#You'll then be able to have a live verion of the vueapp at localhost:8080
+#while django provides the API.
 
 ```
 
