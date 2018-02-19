@@ -57,10 +57,10 @@ python manage.py runserver
 
 #You can run both Django and Vue simoultaneously during development, 
 #Use Vue for hotreloading during front-end development and django just to supply the API.
-#From the base django directory, run django back-end in another window:
+#From the base django directory, run django back-end:
 python manage.py runserver
 
-#From 'vueapp' directory, run dev build of vue front-end app:
+#From 'vueapp' directory, run dev build of vue front-end app in another shell:
 npm run dev
 
 #You'll then be able to have a live verion of the vueapp at localhost:8080
