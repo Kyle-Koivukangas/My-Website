@@ -17,23 +17,21 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         model = Group
         fields = ('url', 'name')
 
+
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = ('date', 'name', 'slug', 'description', 'text', 'image')
 
+
 class BlogPostSerializer(serializers.ModelSerializer):
+    comments = serializers.StringRelatedField(many=True)
+    related_posts = serializers.StringRelatedField(many=True)
+    keywords = serializers.StringRelatedField(many=True)
+
     class Meta:
         model = BlogPost
-        fields = ('title', 'slug', 'content', 'publish_date', 'expiry_date', 'status')
-
-
-# class BlogPostSerializer(serializers.RelatedField):
-
-#     def to_representation(self, value):
-#         if isinstance(value, models.BlogPost):
-#             serializer = BookmarkSerializer(value)
-#         else:
-#             raise Exception('Unexcepted type of tagged object')
-
-#         return serializer.data
+        fields = ('title', 'slug', 'content', 'publish_date',
+                  'expiry_date', 'comments', 'related_posts',
+                  'featured_image', 'status', '_meta_title',
+                  'description', 'keywords')
