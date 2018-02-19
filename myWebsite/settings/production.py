@@ -15,23 +15,17 @@ import sys
 from django import VERSION as DJANGO_VERSION
 from django.utils.translation import ugettext_lazy as _
 
-# NOTE: 
-# Settings I will need to change for release to production:
-# - Allowed hosts 
-# - Debug
-# - prepend_www 
-
 ###############################################
 #####----- Important/Common Settings -----#####
 ###############################################
 from .secret_info import SECRET_KEY
 
-DEBUG = True
+DEBUG = False
 
 ##### URL Settings #####
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["kylekoivukangas.com", "www.kylekoivukangas.com"]
 
-PREPEND_WWW = False
+PREPEND_WWW = True
 APPEND_SLASH = True
 
 ##### Path Settings ######
