@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
@@ -5,9 +6,12 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
 from rest_framework.parsers import FormParser, MultiPartParser
 from mezzanine.blog.models import BlogPost
+from mezzanine.generic.models import ThreadedComment
+from django.db.models import Q
 
 from api.serializers import UserSerializer, GroupSerializer, ProjectSerializer, BlogPostSerializer
-from api.models import Project 
+from api.models import Project
+
 
 @permission_classes((IsAdminUser, ))
 class UserViewSet(viewsets.ModelViewSet):
@@ -17,6 +21,7 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
 
+
 @permission_classes((IsAdminUser, ))
 class GroupViewSet(viewsets.ModelViewSet):
     """
@@ -24,6 +29,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
 
 @permission_classes((IsAuthenticatedOrReadOnly, ))
 class ProjectViewSet(viewsets.ModelViewSet):
@@ -46,12 +52,14 @@ class ProjectViewSet(viewsets.ModelViewSet):
     #         raise ParseError('Request has no resource file attached')
     #     project = Project.objects.create(image=file)
 
+
 @permission_classes((IsAuthenticatedOrReadOnly, ))
 class BlogPostViewSet(viewsets.ModelViewSet):
     """
     BlogPosts API endpoint.
     """
-    # Filter to show only blogposts with 'published' status (in mezzanine published=2, draft=1)
-    queryset = BlogPost.objects.filter(status=2)
+    # Filter to show only blogposts with 'published' status (in mezzanine published=2, draft=1), also filters out expired posts with Q objects
+    queryset = BlogPost.objects.filter(status=2).filter(
+        Q(expiry_date__gte=datetime.now()) | Q(expiry_date=None))
     serializer_class = BlogPostSerializer
     parser_classes = (MultiPartParser, FormParser, )
