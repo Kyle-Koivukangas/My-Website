@@ -8,5 +8,4 @@ from api.models import Project
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ['date', 'name', 'description', 'text', 'image']
 
-
 admin.site.register(Project, ProjectAdmin)
