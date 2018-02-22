@@ -53,6 +53,7 @@ class BlogPostSerializer(serializers.ModelSerializer):
                 "submit_date": comment.submit_date,
                 "by_blog_author": comment.by_author
             }
+            
             if comment.is_public and not comment.is_removed:
                 result.append(comment_data)
             else:
