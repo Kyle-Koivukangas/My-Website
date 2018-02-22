@@ -174,7 +174,7 @@ export default {
     },
     created() {
         // check if dev environment or not, if dev then use dev or staging API.
-        if (window.location.origin == "http://localhost:8080") {
+        if (window.location.origin === "http://localhost:8080") {
             axios
                 .get(
                     // Use all access CORS workaround to access staging API.
@@ -192,9 +192,21 @@ export default {
                 .catch(error => {
                     this.errors.push(error);
                 });
+        } else if (window.location.origin === "https://staging.kylekoivukangas.com") {
+            axios
+                .get("https://staging.kylekoivukangas.com/api/blogposts/")
+                .then(response => {
+                    console.log("response recieved");
+                    console.log(response);
+                    this.apiBlogPosts = response.data;
+                })
+                .catch(error => {
+                    this.errors.push(error);
+                    this.apiFailed = true;
+                });
         } else {
             axios
-                .get("https://www.kylekoivukangas.com/api/blogposts/")
+                .get("https://kylekoivukangas.com/api/blogposts/")
                 .then(response => {
                     console.log("response recieved");
                     console.log(response);
