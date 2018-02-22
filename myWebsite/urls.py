@@ -24,7 +24,6 @@ from django.conf.urls.i18n import i18n_patterns
 from django.views.i18n import set_language
 
 from mezzanine.core.views import direct_to_template
-from mezzanine.conf import settings
 
 
 admin.autodiscover()

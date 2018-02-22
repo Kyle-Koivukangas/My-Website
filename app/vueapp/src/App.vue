@@ -95,7 +95,7 @@ a:hover {
 .view-wrapper {
   //   margin: auto;
   font-size: 1.2rem;
-  @media (max-width: 900px) {
+  @media (max-width: $mediaSmall) {
     font-size: 0.9rem;
   }
 }
