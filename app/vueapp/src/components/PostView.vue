@@ -1,13 +1,13 @@
 <template>
-<div class="postview collapsed">
+<div :id="postid"  class="postview collapsed" v-if="!hide">
     <slot name='head'></slot>
     <slot name='image'></slot>
     <slot name='description'></slot>
     <slot name='content'></slot>
     <slot name='foot'></slot>
-    <div class="expand-btn" @click="isOpen = !isOpen">
-        <p v-if="isOpen == false">Expand <icon class="ico" name="caret-down" scale="2" label="Expand"></icon></p>
-        <p v-if="isOpen == true">Collapse <icon class="ico" name="caret-up" scale="2" label="Collapse"></icon></p>
+    <div class="expand-btn" @click="togglePost()">
+        <p v-if="expanded == false">Expand <icon class="ico" name="caret-down" scale="2" label="Expand"></icon></p>
+        <p v-if="expanded == true">Collapse <icon class="ico" name="caret-up" scale="2" label="Collapse"></icon></p>
     </div>
 </div>
   
@@ -18,22 +18,103 @@ import "vue-awesome/icons/caret-down";
 import "vue-awesome/icons/caret-up";
 
 export default {
-    props: ['postid'],
+    props: ["postid", "slug", "baseroute", "hideall"],
     data() {
         return {
-            isOpen: false,
+            expanded: false,
+            hide: false,
         };
     },
     watch: {
-        isOpen: function () {
-            document.getElementById("blogpost"+this.postid).classList.toggle("collapsed");
+        $route(to, from) {
+            // console.log('to: ', to)
+            // console.log('from:', from)
+            if (to.params.slug === this.slug) {
+                this.expanded = true;
+                this.hide = false;
+                document.getElementById(this.postid).classList.remove("collapsed");                        
+            } else {
+                this.expanded = false;
+                console.log(to.params.slug);
+                if (to.params.slug === undefined ) {
+                    this.hide = false;    
+                } else {
+                    this.hide = true;
+                }
+            }
         },
+        expanded(value) {
+            if (value) {
+                this.$emit("expanded")
+                // this.hideAllByClass("collapsed");
+            } else {
+                this.$emit("collapsed")                
+                // this.showAllByClass("collapsed")
+            }
+        },
+        // hideall(value) {
+        //     console.log(this.$route.params.slug);
+        //     if ((value === true) && (this.$route.params.slug === this.slug)) {
+        //         this.hide = true;
+        //     } else if (value === true) {
+        //         this.hide = false;
+        //     } else {
+        //         this.hide = true;
+        //     }
+        // }
     },
     methods: {
-        expandCurrentPost() {
+        togglePost() {
+            this.expanded = !this.expanded;
+            // document.getElementById(this.postid).classList.toggle("collapsed");
 
+            if (this.expanded) {
+                document.getElementById(this.postid).classList.remove("collapsed");
+                this.$router.push(this.baseroute + this.slug);
+                // history.pushState({}, null, "/#baseRoute" + this.slug);
+            } else {
+                document.getElementById(this.postid).classList.add("collapsed");
+                this.$router.push(this.baseroute);
+                // this.$router.go(-1)
+            }
+            // console.log("params");
+            // console.log(this.$route.params);
+        },
+        hideAllByClass(postClass="collapsed") {
+            var posts = document.getElementsByClassName(postClass);
+            console.log(posts)
+            for (var i = 0; i < posts.length; i++) {
+                posts[i].style.display = "none";
+            }
+        },
+        showAllByClass(postClass="collapsed") {
+            var posts = document.getElementsByClassName(postClass);
+            for (var i = 0; i < posts.length; i++) {
+                posts[i].style.display = 'block';
+            }
         }
+    },
+    mounted() {
+        console.log(`mounted ${this.postid}`)
+        // //check route to see if post is already specified and if it matches this instance
+        // if (this.$route.params.slug == this.slug) {
+        //     // this.togglePost()
+        //     this.expanded = !this.expanded;
+        //     document.getElementById(this.postid).classList.remove("collapsed");            
+        // } else if (this.$route.params.slug) {
+        //     this.hide = true;
+        // } else {
+        //     this.hide = false;
+        // }
+        
     }
+    // beforeRouteUpdate(to, from, next) {
+    //     // react to route changes...
+    //     // don't forget to call next()
+    //     console.log('to:', to)
+    //     console.log('from:', from)
+    //     next()
+    // },
 };
 </script>
 
@@ -93,5 +174,8 @@ $lato: "Lato", sans-serif;
 .collapsed {
     max-height: 250px !important;
     height: 550px;
+}
+.hidden {
+    display: none;
 }
 </style> 

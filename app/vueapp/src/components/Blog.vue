@@ -6,17 +6,7 @@
         </div>
     </div>
     <div class="content">
-        <!-- <h3>In development...</h3> -->
-        <div v-for="post in apiBlogPosts" :key="post.id">
-            <post-view :id="'blogpost'+post.id" :postid="post.id">
-                <div slot="head" class="post-head">
-                    <h3>{{ post.title }}</h3>
-                    <p>Date published: {{post.publish_date}}</p>
-                </div>
-                <p slot="description" class="post-description" v-html="post.content">
-                </p>
-            </post-view>
-        </div>
+        <vue-post-list :apiposts="apiBlogPosts" :baseroute="'/blog/'"></vue-post-list>
     </div>
     <vue-footer/>
 </div>
@@ -29,7 +19,7 @@ import axios from "axios";
 export default {
     components: {
         vueFooter: () => import("./Footer.vue"),
-        postView: () => import("./PostView.vue"),
+        vuePostList: () => import("./PostList.vue"),
     },
     data() {
         return {
@@ -170,6 +160,7 @@ export default {
                     ],
                 },
             ],
+            expanded: false,
         };
     },
     created() {
@@ -178,11 +169,11 @@ export default {
             axios
                 .get(
                     // Use all access CORS workaround to access staging API.
-                    // "https://allorigins.me/get?method=raw&url=" +
-                    //     encodeURIComponent("https://staging.kylekoivukangas.com/api/blogposts/") +
-                    //     "&callback=?"
+                    "https://allorigins.me/get?method=raw&url=" +
+                        encodeURIComponent("https://staging.kylekoivukangas.com/api/blogposts/") +
+                        "&callback=?"
                     // Use django dev server API.
-                    "http://127.0.0.1:8000/api/blogposts/"
+                    // "http://127.0.0.1:8000/api/blogposts/"
                 )
                 .then(response => {
                     console.log("response recieved");
@@ -221,7 +212,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .banner {
     background-color: $highlight2;
     height: 250px;
@@ -242,24 +233,5 @@ export default {
         }
     }
 }
-.post-head {
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    background-color: #ddd;
-    border-bottom: 1px dotted $grey;
-    h3 {
-        margin: 10px 0 8px 10px;
-    }
-    p {
-        margin: 10px 10px 0 0;
-        text-align: right;
-        font-size: .7em;
-        color: grey;
-    }
-}
-.post-description {
-    margin: auto 1em;
-    text-align: left;
-}
+
 </style>
