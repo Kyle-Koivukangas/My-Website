@@ -145,6 +145,9 @@ $sidebarWidth: 300px;
     color: $darkgrey;
     text-shadow: 0px 0px 3px #fff;
   }
+  & :hover {
+      cursor: pointer;
+  }
 }
 .sidebar {
   background-color: $white;
@@ -195,6 +198,7 @@ $sidebarWidth: 300px;
   background-color: $highlight2;
   width: 120px;
   margin: auto;
+  margin-top: 15px;
   border-radius: 40px;
   color: $white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
