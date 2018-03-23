@@ -217,6 +217,15 @@ $sidebarWidth: 300px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
     font-size: 1.1em;
     cursor: pointer;
+    &:hover {
+        transition: 0.3s;
+        background-color: rgb(3, 183, 233);
+    }
+    & li:hover {
+        transition: 0.3s;
+        color: rgb(255, 255, 255);
+        text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.603);
+    }
 }
 .secondary-info {
     position: fixed;

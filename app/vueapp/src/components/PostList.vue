@@ -17,7 +17,7 @@
 
                     <div slot="head" class="post-head">
                         <h3>{{ post.title }}</h3>
-                        <p>Date published: {{post.publish_date}}</p>
+                        <p>Date published: {{post.publish_date.split('T')[0]}}</p>
                     </div>
 
                     <div slot="content" class="post-content" v-html="post.content">

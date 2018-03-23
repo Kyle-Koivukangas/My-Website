@@ -29,11 +29,6 @@ export default {};
 // @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
 
 
-.pulse {
-    -webkit-animation-name: pulse;
-    animation-name: pulse;
-}
-
 $contentwidth: 900px;
 .footer {
     width: $contentwidth;
