@@ -106,7 +106,7 @@ export default {
             const vm = this;
             setTimeout(function() {
                 document.getElementById(vm.convertID(postInfo.id)).classList.remove("collapsed");
-            }, 1);
+            }, 50);
         },
         hideOtherPosts(postID) {
             // Sets postShow values to false except for selected postID that is passed in.

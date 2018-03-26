@@ -176,7 +176,7 @@ export default {
                     // "http://127.0.0.1:8000/api/blogposts/"
                 )
                 .then(response => {
-                    console.log("response recieved");
+                    console.log("response received");
                     console.log(response);
                     this.apiBlogPosts = response.data;
                 })
@@ -187,7 +187,7 @@ export default {
             axios
                 .get("https://staging.kylekoivukangas.com/api/blogposts/")
                 .then(response => {
-                    console.log("response recieved");
+                    console.log("response received");
                     console.log(response);
                     this.apiBlogPosts = response.data;
                 })
@@ -199,7 +199,7 @@ export default {
             axios
                 .get("https://kylekoivukangas.com/api/blogposts/")
                 .then(response => {
-                    console.log("response recieved");
+                    console.log("response received");
                     console.log(response);
                     this.apiBlogPosts = response.data;
                 })
