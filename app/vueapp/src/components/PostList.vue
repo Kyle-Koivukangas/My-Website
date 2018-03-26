@@ -38,12 +38,12 @@ export default {
     props: ["apiposts", "baseroute"],
     data() {
         return {
-            selection: {
-                // selection just holds info about the current selection
+            currentPost: {
+                // currentPost just holds info about the current Post
             },
             postShow: {
                 // PostShow object holds generated list of posts and
-                // corresponding bool for whether they"re visible.
+                // corresponding bool for whether they're visible.
             },
         };
     },
@@ -64,9 +64,9 @@ export default {
             const vm = this;
             if (this.$route.params.slug) {
                 var post = this.getPostBySlug(this.$route.params.slug);
-                this.selection = {id : post.id, slug : post.slug}
+                this.currentPost = { id: post.id, slug: post.slug };
                 setTimeout(function() {
-                    console.log("apipostwatcher, running post selected")
+                    console.log("apipostwatcher, running post selected");
                     vm.postSelected(post, true);
                     document.getElementById(vm.convertID(post.id)).classList.remove("collapsed");
                 }, 50);
@@ -75,20 +75,20 @@ export default {
         $route(to, from) {
             console.log("route change detected");
             // console.log(to)
-            
-            if (to.params.slug === this.selection.slug) {
+
+            if (to.params.slug === this.currentPost.slug) {
                 console.log("slugs match");
-                this.postSelected(this.selection, true);
+                this.postSelected(this.currentPost, true);
             } else if (to.params.slug) {
-                console.log("Slugged but not match with previous article..")
-                var post = this.getPostBySlug(this.$route.params.slug)
-                console.log(post)
-                this.selection = {id : post.id, slug : post.slug}
-                this.postSelected(this.selection, true)
+                console.log("Slugged but not match with previous article..");
+                var post = this.getPostBySlug(this.$route.params.slug);
+                console.log(post);
+                this.currentPost = { id: post.id, slug: post.slug };
+                this.postSelected(this.currentPost, true);
             } else {
                 console.log("slugs dont match");
                 this.reset(true);
-            } 
+            }
         },
     },
     methods: {
@@ -96,7 +96,7 @@ export default {
             // Takes an object containing info about the post that was selected
             // then handles the procedure to display post
             // (hide other posts, expand post, push to router).
-            this.selection = postInfo;
+            this.currentPost = postInfo;
             // noLoop stops infinite looping, use when called from watchers
             this.hideOtherPosts(postInfo.id);
             if (noLoop === false) {
@@ -120,7 +120,7 @@ export default {
         },
         reset(noLoop = false) {
             // Resets the  router route, postShow values, and collapses posts.
-            // this.selection = {};
+            // this.currentPost = {};
             // noLoop stops infinite looping, use when called from watchers
             if (noLoop === false) {
                 this.$router.push(this.baseroute);
@@ -140,7 +140,9 @@ export default {
             var result = this.apiposts.filter(function(obj) {
                 return obj.slug == slug;
             });
-            return result[0]
+            console.log("getPostBySlug:");
+            console.log(result[0]);
+            return result[0];
         },
         convertID(postID) {
             return "post-" + postID;

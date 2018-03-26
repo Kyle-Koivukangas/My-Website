@@ -71,7 +71,7 @@ export default {
                         "&callback=?"
                 )
                 .then(response => {
-                    console.log("response recieved");
+                    console.log("response received");
                     console.log(response);
                     this.apiProjects = response.data;
                 })
@@ -82,7 +82,7 @@ export default {
             axios
                 .get("https://www.kylekoivukangas.com/api/projects/")
                 .then(response => {
-                    console.log("response recieved");
+                    console.log("response received");
                     console.log(response);
                     this.apiProjects = response.data;
                 })
