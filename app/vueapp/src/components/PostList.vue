@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import Velocity from "velocity-animate";
+
 export default {
     components: {
         vuePost: () => import("./Post.vue"),
@@ -105,7 +107,9 @@ export default {
             // Timeout is to circumvent some issues when running all at once..
             const vm = this;
             setTimeout(function() {
-                document.getElementById(vm.convertID(postInfo.id)).classList.remove("collapsed");
+                var el = document.getElementById(vm.convertID(postInfo.id));
+                el.classList.remove("collapsed");
+                Velocity(el, { maxHeight: vm.getChildHeight(el) }, { duration: 500 });
             }, 50);
         },
         hideOtherPosts(postID) {
@@ -147,6 +151,9 @@ export default {
         convertID(postID) {
             return "post-" + postID;
         },
+        getChildHeight(el) {
+            return el.children[0].clientHeight;
+        },
     },
     mounted() {
         console.log(`Mounted PostList`);
@@ -158,21 +165,6 @@ export default {
     created() {
         console.log("Created PostList");
     },
-    // enter: function(el, done) {
-    //     var delay = el.dataset.index * 150;
-    //     setTimeout(function() {
-    //         Velocity(el, { opacity: 1 }, { complete: done });
-    //     }, delay);
-    // },
-    // leave: function(el, done) {
-    //     var delay = el.dataset.index * 150;
-    //     setTimeout(function() {
-    //         Velocity(el, { opacity: 0, height: 0 }, { complete: done });
-    //     }, delay);
-    // },
-    // move: function(el, done) {
-    //     velocity(el, { transition: '1s ease' }, { complete: done});
-    // },
 };
 </script>
 
@@ -196,13 +188,14 @@ $lato: "Lato", sans-serif;
     margin: auto;
     margin-top: 25px;
     min-height: 250px;
-    max-height: 1550px;
+    max-height: auto;
     max-width: $contentSize;
     background-color: #eee;
     border-radius: 5px;
     position: relative;
     overflow: hidden;
     // padding: 10px;
+    padding-bottom: 25px;
 
     $transitionTime: 1s;
     -webkit-transition: max-height $transitionTime;
@@ -266,6 +259,7 @@ $lato: "Lato", sans-serif;
 //   display: inline-block;
 //   margin-right: 10px;
 // }
+
 .post {
     transition: all 1s;
     display: block;
