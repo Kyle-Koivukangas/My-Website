@@ -3,7 +3,7 @@
         <transition-group mode="out-in"  
         tag="div" 
         class="postlist" 
-        name="postlist" appear>
+        name="postlist">
             <div    v-for="post in apiposts" :key="post.id" 
                     :id="convertID(post.id)"
                     class="post collapsed"
@@ -59,36 +59,32 @@ export default {
                 postList[newPosts[i].id] = true;
             }
             this.postShow = postList;
-            console.log("postShow updated.");
 
             // If api info or page is refreshed, this watcher will trigger
-            // This is just a check to see if an article is selected, if it is it will run postSelected()
+            // This is just a check to see if an article is selected, if it is then it will run postSelected()
             const vm = this;
             if (this.$route.params.slug) {
                 var post = this.getPostBySlug(this.$route.params.slug);
                 this.currentPost = { id: post.id, slug: post.slug };
+                // slight delay to give time for page to be populated, may be different for different browsers.
                 setTimeout(function() {
-                    console.log("apipostwatcher, running post selected");
+                    // console.log("apipostwatcher, running post selected");
                     vm.postSelected(post, true);
                     document.getElementById(vm.convertID(post.id)).classList.remove("collapsed");
                 }, 200);
             }
         },
         $route(to, from) {
-            console.log("route change detected");
-            // console.log(to)
-
             if (to.params.slug === this.currentPost.slug) {
-                console.log("slugs match");
+                // console.log("slugs match");
                 this.postSelected(this.currentPost, true);
             } else if (to.params.slug) {
-                console.log("Slugged but not match with previous article..");
+                // console.log("Slugged but not match with previous article..");
                 var post = this.getPostBySlug(this.$route.params.slug);
-                console.log(post);
                 this.currentPost = { id: post.id, slug: post.slug };
                 this.postSelected(this.currentPost, true);
             } else {
-                console.log("slugs dont match");
+                // console.log("slugs dont match");
                 this.reset(true);
             }
         },
@@ -138,14 +134,11 @@ export default {
             for (let i = 0; i < posts.length; i++) {
                 posts[i].classList.add("collapsed");
             }
-            console.log("RESET");
         },
         getPostBySlug(slug) {
             var result = this.apiposts.filter(function(obj) {
                 return obj.slug == slug;
             });
-            console.log("getPostBySlug:");
-            console.log(result[0]);
             return result[0];
         },
         convertID(postID) {
@@ -154,16 +147,6 @@ export default {
         getChildHeight(el) {
             return el.children[0].clientHeight;
         },
-    },
-    mounted() {
-        console.log(`Mounted PostList`);
-        // console.log(this.$route.params);
-        if (this.$route.params.slug) {
-            console.log("slug detected");
-        }
-    },
-    created() {
-        console.log("Created PostList");
     },
 };
 </script>
@@ -178,10 +161,7 @@ $lato: "Lato", sans-serif;
 
 .postlist {
     margin: auto;
-    // height: 500px;
     width: $contentSize;
-    // background-color: blue;
-    // overflow: auto;
 }
 
 .post {
@@ -194,7 +174,6 @@ $lato: "Lato", sans-serif;
     border-radius: 5px;
     position: relative;
     overflow: hidden;
-    // padding: 10px;
     padding-bottom: 25px;
 
     $transitionTime: 1s;
@@ -231,39 +210,12 @@ $lato: "Lato", sans-serif;
 
 .collapsed {
     max-height: 250px !important;
-    // height: 550px;
 }
-// .list-enter-active {
-//     transition: 1s ease;
-// }
 
-// .list-leave-active {
-//     transition: opacity 1s ease;
-//     position: absolute;
-// }
-
-// .list-enter {
-//     transition: opacity 1s ease;
-// }
-// .list-leave-to {
-//     opacity: 0;
-//     background-color: #eee;
-//     transform: translateY(10px);
-// }
-
-// .list-move {
-//     transition: 1s ease-out;
-// }
-
-// .postlist-item {
-//   display: inline-block;
-//   margin-right: 10px;
-// }
 
 .post {
     transition: all 1s;
     display: block;
-    // margin-right: 10px;
 }
 .postlist-enter-active,
 .list-leave-active {
@@ -275,9 +227,9 @@ $lato: "Lato", sans-serif;
 .postlist-enter,
 .postlist-leave-to {
     opacity: 0;
-    transform: translateZ(-1000px);
-    transform: translatey(100px);
-    transform: scale3d(0.7,0.7,0.1);
+    transform: translateZ(-999px);
+    transform: translateY(100px);
+    transform: scale3d(0.95,0.95,0.1);
 }
 .postlist-leave-active {
     position: absolute;
