@@ -2,10 +2,10 @@
     <div class="navigation">
         <transition enter-active-class="slideInLeft" leave-active-class="slideOutLeft">
             <div class="sidebar fixed-top" v-if="show">
-                <img class="portrait" src="../assets/Kyle.jpg" alt="">
-                <h3 class="nav-title">Kyle Koivukangas</h3>
+                <img class="portrait hidden" src="../assets/Kyle.jpg" alt="">
+                <h3 class="nav-title hidden">Kyle Koivukangas</h3>
 
-                <div class="nav-links">
+                <div class="nav-links hidden">
                     <ul>
                         <li>
                             <router-link class="link" to="/" exact>Home</router-link>
@@ -25,7 +25,7 @@
                     </ul>
                 </div>
 
-                <div class="secondary-info">
+                <div class="secondary-info hidden">
                     <ul>
                         <li><a class="secondary-link" href="mailto:kyle.koivukangas@gmail.com"><icon class="ico" name="envelope" scale="1" label="Email"></icon> Email</a></li>
                         <li><a class="secondary-link" target="_blank" href="https://github.com/Kyle-Koivukangas"><icon class="ico" name="github" scale="1" label="github"></icon> Github</a></li>
@@ -58,6 +58,7 @@
 <script>
 import "vue-awesome/icons/bars";
 import "vue-awesome/icons/times";
+import Velocity from "velocity-animate";
 
 export default {
     data() {
@@ -72,6 +73,7 @@ export default {
             if (show === true) {
                 this.showBtn = false;
                 this.$emit("show", true);
+                this.sequentialEnterAnimation();
             } else {
                 this.$emit("show", false);
                 setTimeout(() => {
@@ -100,6 +102,29 @@ export default {
         },
         alertBTC() {
             prompt("Please press ctrl+c to copy the BTC receive address.", "1AXknQRS4CLYCLLuAd6UMsBkbbA9DM4XnW");
+        },
+        sequentialEnterAnimation() {
+            setTimeout(function() {
+                var portrait = document.getElementsByClassName("portrait")[0];
+                var navTitle = document.getElementsByClassName("nav-title")[0];
+                var navLinks = document.getElementsByClassName("nav-links")[0];
+                var secondaryInfo = document.getElementsByClassName("secondary-info")[0];
+
+                var animationSequence = [
+                    { e: portrait, p: { translateX: [0, "-20px"], opacity: [1, 0] }, o: { duration: 100 } },
+                    { e: navTitle, p: { opacity: [1, 0] }, o: { duration: 100 } },
+                    { e: navLinks, p: { translateX: [0, "-20px"], opacity: [1, 0] }, o: { duration: 100 } },
+                    { e: secondaryInfo, p: { translateX: [0, "-80px"], opacity: [1, 0] }, o: { duration: 250 } },
+                ];
+                var i = -1;
+                (function loop() {
+                    if (i++ > animationSequence.length - 2) return;
+                    setTimeout(function() {
+                        Velocity(animationSequence[i].e, animationSequence[i].p, animationSequence[i].o);
+                        loop();
+                    }, animationSequence[i].o.duration);
+                })();
+            }, 300);
         },
     },
     created() {
@@ -261,5 +286,8 @@ $sidebarWidth: 300px;
     clear: both;
     background-color: lighten($lightgrey, 5%);
     margin: 10px 0 0px 0;
+}
+.hidden {
+    opacity: 0;
 }
 </style>
