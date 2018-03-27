@@ -71,7 +71,7 @@ export default {
                     console.log("apipostwatcher, running post selected");
                     vm.postSelected(post, true);
                     document.getElementById(vm.convertID(post.id)).classList.remove("collapsed");
-                }, 50);
+                }, 200);
             }
         },
         $route(to, from) {
@@ -275,7 +275,9 @@ $lato: "Lato", sans-serif;
 .postlist-enter,
 .postlist-leave-to {
     opacity: 0;
-    transform: translateZ(30px);
+    transform: translateZ(-1000px);
+    transform: translatey(100px);
+    transform: scale3d(0.7,0.7,0.1);
 }
 .postlist-leave-active {
     position: absolute;
