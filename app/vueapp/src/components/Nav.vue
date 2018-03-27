@@ -117,11 +117,11 @@ export default {
                     { e: secondaryInfo, p: { translateX: [0, "-80px"], opacity: [1, 0] }, o: { duration: 250 } },
                 ];
                 var i = -1;
-                (function loop() {
+                (function sequentialLoop() {
                     if (i++ > animationSequence.length - 2) return;
                     setTimeout(function() {
                         Velocity(animationSequence[i].e, animationSequence[i].p, animationSequence[i].o);
-                        loop();
+                        sequentialLoop();
                     }, animationSequence[i].o.duration);
                 })();
             }, 300);
