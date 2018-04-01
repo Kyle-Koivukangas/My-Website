@@ -9,6 +9,7 @@ import Vuex from 'vuex';
 import store from './store/store.js';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
+// import Velocity from 'velocity-animate';
 
 require('vue2-animate/dist/vue2-animate.min.css');
 

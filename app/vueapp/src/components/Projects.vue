@@ -71,8 +71,7 @@ export default {
                         "&callback=?"
                 )
                 .then(response => {
-                    console.log("response recieved");
-                    console.log(response);
+                    console.log("Dev Environment Detected.")
                     this.apiProjects = response.data;
                 })
                 .catch(error => {
@@ -82,8 +81,6 @@ export default {
             axios
                 .get("https://www.kylekoivukangas.com/api/projects/")
                 .then(response => {
-                    console.log("response recieved");
-                    console.log(response);
                     this.apiProjects = response.data;
                 })
                 .catch(error => {

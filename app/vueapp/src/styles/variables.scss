@@ -1,26 +1,26 @@
 
 // @import url('https://fonts.googleapis.com/css?family=Josefin+Slab|Ubuntu|Ubuntu+Condensed|Vollkorn');
 
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url("/assets/fonts2/Josefin_Slab/JosefinSlab-Regular.ttf") format("truetype");
- }
- @font-face {
-    font-family: 'Vollkorn';
-    src: url("/assets/fonts2/Vollkorn/Vollkorn-Regular.ttf") format("truetype");
- }
- @font-face {
-    font-family: 'Ubuntu';
-    src: url("/assets/fonts2/Ubuntu/Ubuntu-Regular.ttf") format("truetype");
- }
- @font-face {
-    font-family: 'Ubuntu Condensed';
-    src: url("/assets/fonts2/Ubuntu_Condensed/UbuntuCondensed-Regular.ttf") format("truetype");
- }
- @font-face {
-    font-family: 'Lato';
-    src: url("/assets/fonts2/Lato/Lato-Regular.ttf") format("truetype");
- }
+// @font-face {
+//     font-family: 'Josefin Slab';
+//     src: url("/assets/fonts2/Josefin_Slab/JosefinSlab-Regular.ttf") format("truetype");
+//  }
+//  @font-face {
+//     font-family: 'Vollkorn';
+//     src: url("/assets/fonts2/Vollkorn/Vollkorn-Regular.ttf") format("truetype");
+//  }
+//  @font-face {
+//     font-family: 'Ubuntu';
+//     src: url("/assets/fonts2/Ubuntu/Ubuntu-Regular.ttf") format("truetype");
+//  }
+//  @font-face {
+//     font-family: 'Ubuntu Condensed';
+//     src: url("/assets/fonts2/Ubuntu_Condensed/UbuntuCondensed-Regular.ttf") format("truetype");
+//  }
+//  @font-face {
+//     font-family: 'Lato';
+//     src: url("/assets/fonts2/Lato/Lato-Regular.ttf") format("truetype");
+//  }
 
 
 $josefin: 'Josefin Slab', serif;
@@ -42,5 +42,9 @@ $black: #252323;
 $highlight2: #06C8FE; // old color: #2DE1FC
 $blue2: #70798C;
 
-
+//content width (how wide I want default wrapper
 $contentSize: 900px;
+
+// Media screen sizes
+$mediaSmall: 900px; //meant for max-width
+

@@ -8,8 +8,10 @@ router = routers.DefaultRouter()
 router.register(r'projects', views.ProjectViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'users', views.UserViewSet)
+router.register(r'blogposts', views.BlogPostViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^get_auth_token/$', rest_framework_views.obtain_auth_token, name='get_auth_token/'),
+    url(r'^get_auth_token/$', rest_framework_views.obtain_auth_token,
+        name='get_auth_token/'),
 ]
