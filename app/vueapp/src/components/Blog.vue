@@ -195,7 +195,7 @@ export default {
                 });
         } else {
             axios
-                .get("https://kylekoivukangas.com/api/blogposts/")
+                .get("https://www.kylekoivukangas.com/api/blogposts/")
                 .then(response => {
                     this.apiBlogPosts = response.data;
                 })
