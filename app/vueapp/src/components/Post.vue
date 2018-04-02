@@ -97,6 +97,7 @@ pre {
 blockquote {
     border-radius: 3px;
     background-color: #ddd;
+    padding: 3px;
 }
 code {
     border-radius: 3px;
