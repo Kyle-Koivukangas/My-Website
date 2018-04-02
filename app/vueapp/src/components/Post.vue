@@ -54,10 +54,6 @@ export default {
 </script>
 
 <style lang="scss">
-<<<<<<< HEAD
-
-=======
->>>>>>> v1.1.3
 .post-child {
     // margin: 10px;
     height: 100%;
