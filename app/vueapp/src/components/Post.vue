@@ -71,6 +71,7 @@ export default {
         font-size: 0.9em;
         margin: 2px 0 2px 25px;
         // text-align: left;
+        padding: 0px !important;
     }
     p:hover {
         cursor: pointer;
