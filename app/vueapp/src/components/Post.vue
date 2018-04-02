@@ -93,6 +93,7 @@ pre {
     border-radius: 3px;
     background-color: #ddd;
     border: solid 1px #ccc;
+    padding: 5px;
 }
 blockquote {
     border-radius: 3px;
@@ -101,6 +102,7 @@ blockquote {
 code {
     border-radius: 3px;
     background-color: #ddd;
+    padding: 3px;
 }
 p {
     border-radius: 3px;
@@ -110,5 +112,6 @@ p {
     border-radius: 3px 3px 0 0;
     background-color: #ccc;
     text-align: center;
+    padding: 5px
 }
 </style>
