@@ -53,7 +53,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .post-child {
     // margin: 10px;
     height: 100%;
@@ -70,6 +70,7 @@ export default {
         font-size: 0.9em;
         margin: 2px 0 2px 25px;
         // text-align: left;
+        padding: 0px !important;
     }
     p:hover {
         cursor: pointer;
@@ -84,5 +85,32 @@ export default {
     svg {
         height: 22px;
     }
+}
+
+// Blog Post Formatting (using tags that mezzanine uses)
+pre {
+    border-radius: 3px;
+    background-color: #ddd;
+    border: solid 1px #ccc;
+    padding: 5px;
+}
+blockquote {
+    border-radius: 3px;
+    background-color: #ddd;
+}
+code {
+    border-radius: 3px;
+    background-color: #ddd;
+    padding: 3px;
+}
+p {
+    border-radius: 3px;
+    padding: 5px;
+}
+.block-header {
+    border-radius: 3px 3px 0 0;
+    background-color: #ccc;
+    text-align: center;
+    padding: 5px
 }
 </style>
