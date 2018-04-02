@@ -159,6 +159,30 @@ $ubuntu: "Ubuntu", sans-serif;
 $ubuntucond: "Ubuntu Condensed", sans-serif;
 $lato: "Lato", sans-serif;
 
+// Blog Post Formatting (using tags that mezzanine uses)
+pre {
+    border-radius: 3px;
+    background-color: #ddd;
+    border: solid 1px #ccc;
+}
+blockquote {
+    border-radius: 3px;
+    background-color: #ddd;
+}
+code {
+    border-radius: 3px;
+    background-color: #ddd;
+}
+p {
+    border-radius: 3px;
+    padding: 5px;
+}
+.block-header {
+    border-radius: 3px 3px 0 0;
+    background-color: #ccc;
+    text-align: center;
+}
+
 .postlist {
     margin: auto;
     width: $contentSize;
