@@ -97,7 +97,7 @@ pre {
 blockquote {
     border-radius: 3px;
     background-color: #ddd;
-    padding: 3px;
+    // padding: 3px;
 }
 code {
     border-radius: 3px;
@@ -113,5 +113,8 @@ p {
     background-color: #ccc;
     text-align: center;
     padding: 5px
+}
+.post-content {
+    font-size: 1.1rem;
 }
 </style>
