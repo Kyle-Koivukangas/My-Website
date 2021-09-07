@@ -19,7 +19,7 @@ mccabe==0.6.1
 Mezzanine==4.2.3
 oauthlib==2.0.6
 olefile==0.44
-Pillow==5.0.0
+Pillow==8.3.2
 pylint==1.8.1
 pytz==2017.3
 requests==2.18.4
